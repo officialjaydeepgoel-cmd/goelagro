@@ -1,8 +1,0 @@
-{
-  "beforeAfter": [
-    { "id": 1, "before": "/uploads/gallery/before-1.jpg", "after": "/uploads/gallery/after-1.jpg", "title": "Kitchen Deep Cleaning", "description": "Transformed greasy kitchen into sparkling clean" },
-    { "id": 2, "before": "/uploads/gallery/before-2.jpg", "after": "/uploads/gallery/after-2.jpg", "title": "Sofa Cleaning", "description": "Stubborn stains removed from fabric sofa" }
-  ],
-  "team": [],
-  "services": []
-}
