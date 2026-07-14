@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery - Suraksha Home Services</title>
+<link rel="stylesheet" href="../css/admin.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="admin-wrapper">
+  <aside class="admin-sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">SH</div>
+      <div class="sidebar-brand">Suraksha<span>Admin Panel</span></div>
+      <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+    </div>
+    <div class="sidebar-user">
+      <div class="sidebar-user-avatar">A</div>
+      <div class="sidebar-user-info">
+        <span class="name">Admin</span>
+        <span class="role">Super Admin</span>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Main</div>
+        <a href="dashboard.html" class="sidebar-nav-item"><i class="fas fa-th-large"></i><span class="nav-label">Dashboard</span></a>
+        <a href="services.html" class="sidebar-nav-item"><i class="fas fa-concierge-bell"></i><span class="nav-label">Services</span></a>
+        <a href="gallery.html" class="sidebar-nav-item active"><i class="fas fa-images"></i><span class="nav-label">Gallery</span></a>
+        <a href="bookings.html" class="sidebar-nav-item"><i class="fas fa-calendar-check"></i><span class="nav-label">Bookings</span><span class="nav-badge">12</span></a>
+        <a href="reviews.html" class="sidebar-nav-item"><i class="fas fa-star"></i><span class="nav-label">Reviews</span></a>
+        <a href="blog.html" class="sidebar-nav-item"><i class="fas fa-blog"></i><span class="nav-label">Blog</span></a>
+        <a href="contacts.html" class="sidebar-nav-item"><i class="fas fa-envelope"></i><span class="nav-label">Contacts</span><span class="nav-badge">5</span></a>
+        <a href="settings.html" class="sidebar-nav-item"><i class="fas fa-cog"></i><span class="nav-label">Settings</span></a>
+      </div>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="index.html" class="sidebar-nav-item"><i class="fas fa-sign-out-alt"></i><span class="nav-label">Logout</span></a>
+    </div>
+  </aside>
+  <div class="admin-sidebar-overlay" id="sidebarOverlay"></div>
+  <main class="admin-main">
+    <header class="admin-header">
+      <div class="admin-header-left">
+        <button class="admin-header-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
+        <div class="admin-header-search">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search gallery...">
+        </div>
+      </div>
+      <div class="admin-header-right">
+        <button class="admin-header-btn"><i class="fas fa-bell"></i><span class="notification-count">3</span></button>
+        <div class="admin-header-profile">
+          <div class="admin-header-avatar">A</div>
+          <div class="info">
+            <span class="name">Admin</span>
+            <span class="role">Super Admin</span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="admin-page">
+      <div class="admin-breadcrumb">
+        <a href="dashboard.html">Home</a>
+        <span class="separator"><i class="fas fa-chevron-right"></i></span>
+        <span class="current">Gallery</span>
+      </div>
+      <div class="admin-page-header">
+        <div class="admin-page-title">
+          <h1>Gallery</h1>
+          <p>Manage before/after image pairs</p>
+        </div>
+        <div class="admin-page-actions">
+          <button class="admin-btn admin-btn-primary" id="addGalleryBtn"><i class="fas fa-plus"></i> Add New Entry</button>
+        </div>
+      </div>
+      <div class="admin-form" id="galleryForm" style="display:none">
+        <div class="admin-form-header">
+          <h3 id="galleryFormTitle">Add New Gallery Entry</h3>
+          <p>Upload before and after images with a title and description</p>
+        </div>
+        <div class="admin-form-grid">
+          <div class="admin-form-group">
+            <label class="admin-form-label">Title <span class="required">*</span></label>
+            <input type="text" id="galleryTitle" class="admin-form-control" placeholder="e.g. Kitchen Deep Cleaning">
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-form-label">Description</label>
+            <input type="text" id="galleryDesc" class="admin-form-control" placeholder="e.g. Before and after of our deep cleaning">
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+          <div class="admin-form-group">
+            <label class="admin-form-label">Before Image <span class="required">*</span></label>
+            <div class="admin-form-file">
+              <input type="file" id="beforeImage" accept="image/*">
+              <div class="file-upload-box" id="beforeDrop">
+                <div class="file-upload-icon"><i class="fas fa-image"></i></div>
+                <div class="file-upload-text">Drop before image here</div>
+                <div class="file-upload-hint">or click to browse</div>
+              </div>
+            </div>
+            <div class="file-upload-list" id="beforeFileList"></div>
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-form-label">After Image <span class="required">*</span></label>
+            <div class="admin-form-file">
+              <input type="file" id="afterImage" accept="image/*">
+              <div class="file-upload-box" id="afterDrop">
+                <div class="file-upload-icon"><i class="fas fa-image"></i></div>
+                <div class="file-upload-text">Drop after image here</div>
+                <div class="file-upload-hint">or click to browse</div>
+              </div>
+            </div>
+            <div class="file-upload-list" id="afterFileList"></div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:20px">
+          <button class="admin-btn admin-btn-primary" id="saveGallery"><i class="fas fa-save"></i> Save Entry</button>
+          <button class="admin-btn admin-btn-secondary" id="cancelGallery">Cancel</button>
+        </div>
+      </div>
+      <div class="table-card">
+        <div class="table-card-header">
+          <h3><i class="fas fa-images" style="margin-right:8px;color:var(--primary)"></i> Existing Gallery Entries</h3>
+          <span class="info" style="font-size:0.85rem;color:var(--text-secondary)">Drag to reorder</span>
+        </div>
+        <div class="table-card-body">
+          <table class="data-table" id="galleryTable">
+            <thead>
+              <tr>
+                <th style="width:40px"><i class="fas fa-grip-vertical"></i></th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Before</th>
+                <th>After</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="galleryBody">
+              <tr draggable="true">
+                <td><i class="fas fa-grip-vertical" style="cursor:grab;color:var(--gray-400)"></i></td>
+                <td><strong>Kitchen Deep Cleaning</strong></td>
+                <td>Complete kitchen transformation</td>
+                <td><div style="width:60px;height:40px;background:var(--gray-200);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:var(--gray-500)">Before</div></td>
+                <td><div style="width:60px;height:40px;background:var(--gray-200);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:var(--gray-500)">After</div></td>
+                <td><div class="cell-action"><button class="cell-action-icon delete" onclick="deleteGalleryEntry(this)"><i class="fas fa-trash"></i></button></div></td>
+              </tr>
+              <tr draggable="true">
+                <td><i class="fas fa-grip-vertical" style="cursor:grab;color:var(--gray-400)"></i></td>
+                <td><strong>Bathroom Deep Scrub</strong></td>
+                <td>Bathroom before and after cleaning</td>
+                <td><div style="width:60px;height:40px;background:var(--gray-200);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:var(--gray-500)">Before</div></td>
+                <td><div style="width:60px;height:40px;background:var(--gray-200);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:var(--gray-500)">After</div></td>
+                <td><div class="cell-action"><button class="cell-action-icon delete" onclick="deleteGalleryEntry(this)"><i class="fas fa-trash"></i></button></div></td>
+              </tr>
+              <tr draggable="true">
+                <td><i class="fas fa-grip-vertical" style="cursor:grab;color:var(--gray-400)"></i></td>
+                <td><strong>Sofa Stain Removal</strong></td>
+                <td>5-seater sofa cleaning result</td>
+                <td><div style="width:60px;height:40px;background:var(--gray-200);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:var(--gray-500)">Before</div></td>
+                <td><div style="width:60px;height:40px;background:var(--gray-200);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:var(--gray-500)">After</div></td>
+                <td><div class="cell-action"><button class="cell-action-icon delete" onclick="deleteGalleryEntry(this)"><i class="fas fa-trash"></i></button></div></td>
+              </tr>
+              <tr draggable="true">
+                <td><i class="fas fa-grip-vertical" style="cursor:grab;color:var(--gray-400)"></i></td>
+                <td><strong>Living Room Makeover</strong></td>
+                <td>Full living room deep clean</td>
+                <td><div style="width:60px;height:40px;background:var(--gray-200);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:var(--gray-500)">Before</div></td>
+                <td><div style="width:60px;height:40px;background:var(--gray-200);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:var(--gray-500)">After</div></td>
+                <td><div class="cell-action"><button class="cell-action-icon delete" onclick="deleteGalleryEntry(this)"><i class="fas fa-trash"></i></button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-footer">
+          <span class="info">Showing 4 entries</span>
+          <div class="table-pagination">
+            <button disabled><i class="fas fa-chevron-left"></i></button>
+            <button class="active">1</button>
+            <button disabled><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<div class="admin-modal-overlay" id="deleteModal">
+  <div class="admin-modal admin-modal-sm">
+    <div class="admin-modal-header">
+      <h3>Delete Entry</h3>
+      <button class="admin-modal-close" id="closeDeleteModal"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="admin-modal-body">
+      <p style="text-align:center;font-size:1rem;color:var(--text-secondary)">Are you sure you want to delete this gallery entry?</p>
+    </div>
+    <div class="admin-modal-footer">
+      <button class="admin-btn admin-btn-secondary" id="cancelDelete">Cancel</button>
+      <button class="admin-btn admin-btn-danger" id="confirmDelete"><i class="fas fa-trash"></i> Delete</button>
+    </div>
+  </div>
+</div>
+<script>
+(function() {
+  var galleryForm = document.getElementById('galleryForm');
+  var addBtn = document.getElementById('addGalleryBtn');
+  var cancelBtn = document.getElementById('cancelGallery');
+  var saveBtn = document.getElementById('saveGallery');
+  var deleteModal = document.getElementById('deleteModal');
+  var closeDelete = document.getElementById('closeDeleteModal');
+  var cancelDelete = document.getElementById('cancelDelete');
+  var confirmDelete = document.getElementById('confirmDelete');
+  var deleteTarget = null;
+  addBtn.addEventListener('click', function() {
+    galleryForm.style.display = 'block';
+    addBtn.style.display = 'none';
+    document.getElementById('galleryFormTitle').textContent = 'Add New Gallery Entry';
+  });
+  cancelBtn.addEventListener('click', function() {
+    galleryForm.style.display = 'none';
+    addBtn.style.display = '';
+    document.getElementById('galleryTitle').value = '';
+    document.getElementById('galleryDesc').value = '';
+    document.getElementById('beforeFileList').innerHTML = '';
+    document.getElementById('afterFileList').innerHTML = '';
+  });
+  saveBtn.addEventListener('click', function() {
+    var title = document.getElementById('galleryTitle');
+    if (!title.value.trim()) { title.classList.add('error'); return; }
+    title.classList.remove('error');
+    galleryForm.style.display = 'none';
+    addBtn.style.display = '';
+    title.value = '';
+    document.getElementById('galleryDesc').value = '';
+    document.getElementById('beforeFileList').innerHTML = '';
+    document.getElementById('afterFileList').innerHTML = '';
+    var container = document.getElementById('notification-container') || (function(){
+      var c = document.createElement('div');
+      c.className = 'notification-container';
+      c.id = 'notification-container';
+      document.body.appendChild(c);
+      return c;
+    })();
+    var toast = document.createElement('div');
+    toast.className = 'notification-toast success';
+    toast.innerHTML = '<div class="notification-toast-icon"><i class="fas fa-check-circle"></i></div><div class="notification-toast-content"><div class="notification-toast-title">Saved</div><div class="notification-toast-text">Gallery entry added successfully.</div></div><button class="notification-toast-close" onclick="this.parentElement.remove()"><i class="fas fa-times"></i></button>';
+    container.appendChild(toast);
+    setTimeout(function() { if (toast.parentElement) toast.remove(); }, 4000);
+  });
+  window.deleteGalleryEntry = function(btn) {
+    deleteTarget = btn.closest('tr');
+    deleteModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+  closeDelete.addEventListener('click', function() { deleteModal.classList.remove('active'); document.body.style.overflow = ''; });
+  cancelDelete.addEventListener('click', function() { deleteModal.classList.remove('active'); document.body.style.overflow = ''; });
+  confirmDelete.addEventListener('click', function() {
+    if (deleteTarget) deleteTarget.remove();
+    deleteModal.classList.remove('active');
+    document.body.style.overflow = '';
+    deleteTarget = null;
+  });
+  var beforeFile = document.getElementById('beforeImage');
+  var beforeDrop = document.getElementById('beforeDrop');
+  var beforeList = document.getElementById('beforeFileList');
+  var afterFile = document.getElementById('afterImage');
+  var afterDrop = document.getElementById('afterDrop');
+  var afterList = document.getElementById('afterFileList');
+  function setupFileUpload(input, drop, list) {
+    input.addEventListener('change', function() { handleFile(this.files, list); });
+    drop.addEventListener('dragover', function(e) { e.preventDefault(); this.classList.add('dragover'); });
+    drop.addEventListener('dragleave', function() { this.classList.remove('dragover'); });
+    drop.addEventListener('drop', function(e) {
+      e.preventDefault();
+      this.classList.remove('dragover');
+      if (e.dataTransfer.files.length) {
+        input.files = e.dataTransfer.files;
+        handleFile(e.dataTransfer.files, list);
+      }
+    });
+  }
+  function handleFile(files, list) {
+    list.innerHTML = '';
+    for (var i = 0; i < files.length; i++) {
+      var f = files[i];
+      var item = document.createElement('div');
+      item.className = 'file-upload-item';
+      var size = (f.size / 1024).toFixed(1);
+      item.innerHTML = '<div class="file-icon"><i class="fas fa-file-image"></i></div><div class="file-info"><span class="file-name">' + f.name + '</span><span class="file-size">' + size + ' KB</span></div><div class="file-remove" onclick="this.parentElement.remove()"><i class="fas fa-times"></i></div>';
+      list.appendChild(item);
+    }
+  }
+  setupFileUpload(beforeFile, beforeDrop, beforeList);
+  setupFileUpload(afterFile, afterDrop, afterList);
+  var rows = document.querySelectorAll('#galleryBody tr');
+  var dragSrcEl = null;
+  rows.forEach(function(row) {
+    row.addEventListener('dragstart', function(e) {
+      dragSrcEl = this;
+      e.dataTransfer.effectAllowed = 'move';
+      this.style.opacity = '0.4';
+    });
+    row.addEventListener('dragend', function() {
+      this.style.opacity = '1';
+    });
+    row.addEventListener('dragover', function(e) { e.preventDefault(); });
+    row.addEventListener('drop', function(e) {
+      e.preventDefault();
+      if (dragSrcEl && dragSrcEl !== this) {
+        var parent = this.parentNode;
+        var siblings = Array.from(parent.children);
+        var fromIdx = siblings.indexOf(dragSrcEl);
+        var toIdx = siblings.indexOf(this);
+        if (fromIdx < toIdx) {
+          parent.insertBefore(dragSrcEl, this.nextSibling);
+        } else {
+          parent.insertBefore(dragSrcEl, this);
+        }
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

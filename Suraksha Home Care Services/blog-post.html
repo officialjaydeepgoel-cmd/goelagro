@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title id="postTitle">Blog Post - Suraksha Home Services</title>
+<meta name="description" id="postDesc" content="Read our latest blog post from Suraksha Home Services.">
+<meta name="keywords" content="home cleaning, Suraksha, blog, cleaning tips, home maintenance">
+<meta name="robots" content="index, follow">
+<meta property="og:title" id="ogTitle" content="Blog Post - Suraksha Home Services">
+<meta property="og:description" id="ogDesc" content="Read our latest blog post.">
+<meta property="og:type" content="article">
+<meta property="og:url" id="ogUrl" content="https://surakshahomeservices.in/blog-post.html">
+<meta property="og:image" id="ogImage" content="https://surakshahomeservices.in/assets/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" id="twTitle" content="Blog Post - Suraksha Home Services">
+<meta name="twitter:description" id="twDesc" content="Read our latest blog post.">
+<link rel="canonical" href="https://surakshahomeservices.in/blog-post.html">
+<link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css">
+<style>
+.blog-post-section { padding: 60px 0; }
+.blog-post-layout { display: grid; grid-template-columns: 1fr 300px; gap: 50px; }
+.blog-post-article { max-width: 800px; }
+.blog-post-article .featured-image { width: 100%; max-height: 500px; object-fit: cover; border-radius: var(--radius-xl); margin-bottom: 30px; }
+.blog-post-article .post-header { margin-bottom: 30px; }
+.blog-post-article .post-header .post-category { display: inline-block; padding: 6px 16px; background: var(--primary); color: var(--white); font-size: 0.85rem; font-weight: 600; border-radius: 50px; margin-bottom: 15px; }
+.blog-post-article .post-header h1 { font-size: 2.2rem; line-height: 1.3; margin-bottom: 15px; color: var(--text-primary); }
+.blog-post-article .post-header .post-meta { display: flex; align-items: center; gap: 25px; flex-wrap: wrap; font-size: 0.95rem; color: var(--text-light); padding-bottom: 20px; border-bottom: 1px solid var(--border-color); }
+.blog-post-article .post-header .post-meta span { display: flex; align-items: center; gap: 6px; }
+.blog-post-article .post-body { font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary); }
+.blog-post-article .post-body p { margin-bottom: 1.5rem; }
+.blog-post-article .post-body h2 { font-size: 1.6rem; margin: 2rem 0 1rem; color: var(--text-primary); }
+.blog-post-article .post-body h3 { font-size: 1.3rem; margin: 1.8rem 0 0.8rem; color: var(--text-primary); }
+.blog-post-article .post-body ul, .blog-post-article .post-body ol { margin: 0 0 1.5rem 1.5rem; }
+.blog-post-article .post-body li { margin-bottom: 8px; }
+.blog-post-article .post-body img { border-radius: var(--radius-lg); margin: 1.5rem 0; }
+.blog-post-article .post-body blockquote { border-left: 4px solid var(--primary); padding: 20px 25px; margin: 1.5rem 0; background: var(--gray-50); border-radius: 0 var(--radius-md) var(--radius-md) 0; font-style: italic; font-size: 1.1rem; color: var(--text-primary); }
+.share-section { display: flex; align-items: center; gap: 15px; padding: 30px 0; margin-top: 30px; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+.share-section span { font-weight: 600; font-size: 0.95rem; color: var(--text-primary); }
+.share-btn { width: 42px; height: 42px; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--white); transition: var(--transition-base); }
+.share-btn:hover { transform: translateY(-3px); }
+.share-btn.facebook { background: #1877f2; }
+.share-btn.twitter { background: #1da1f2; }
+.share-btn.whatsapp { background: #25d366; }
+.share-btn.linkedin { background: #0a66c2; }
+.share-btn.email { background: var(--gray-600); }
+.related-posts { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border-color); }
+.related-posts h2 { font-size: 1.8rem; margin-bottom: 30px; text-align: center; }
+.related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+.related-card { border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; transition: var(--transition-base); background: var(--white); }
+.related-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+.related-card img { width: 100%; height: 160px; object-fit: cover; }
+.related-card .related-body { padding: 18px; }
+.related-card .related-body h4 { font-size: 1rem; margin-bottom: 8px; line-height: 1.4; }
+.related-card .related-body h4 a { color: var(--text-primary); }
+.related-card .related-body h4 a:hover { color: var(--primary); }
+.related-card .related-body .related-meta { font-size: 0.8rem; color: var(--text-light); }
+.blog-sidebar { position: sticky; top: calc(var(--header-height) + 30px); }
+.sidebar-widget { border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 30px; margin-bottom: 25px; background: var(--white); }
+.sidebar-widget h4 { font-size: 1.1rem; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 2px solid var(--primary); }
+.sidebar-widget ul li { margin-bottom: 12px; }
+.sidebar-widget ul li a { display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.9rem; transition: var(--transition-base); }
+.sidebar-widget ul li a:hover { color: var(--primary); transform: translateX(5px); }
+.sidebar-cta { background: var(--primary); color: var(--white); text-align: center; padding: 35px 25px; border-radius: var(--radius-xl); }
+.sidebar-cta h4 { color: var(--white); border-bottom-color: rgba(255,255,255,0.2); }
+.sidebar-cta p { color: rgba(255,255,255,0.85); font-size: 0.9rem; margin-bottom: 20px; }
+.loading-post { text-align: center; padding: 100px 20px; }
+.loading-post .spinner { width: 50px; height: 50px; margin: 0 auto 20px; border: 4px solid var(--gray-200); border-top-color: var(--primary); border-radius: var(--radius-full); animation: spin 0.8s linear infinite; }
+.loading-post p { color: var(--text-light); }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (max-width: 1023px) { .blog-post-layout { grid-template-columns: 1fr; } .blog-sidebar { display: none; } .related-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 767px) { .blog-post-article .post-header h1 { font-size: 1.6rem; } .related-grid { grid-template-columns: 1fr; } .share-section { flex-wrap: wrap; } }
+</style>
+</head>
+<body>
+<div class="page-loader" id="pageLoader"><div class="loader-spinner"></div><p class="loader-text">Loading Suraksha...</p></div>
+<div class="mobile-menu-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" id="closeMenu"><i class="fas fa-times"></i></button>
+  <a href="index.html" class="mobile-nav-link">Home</a>
+  <a href="services.html" class="mobile-nav-link">Services</a>
+  <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+  <a href="about.html" class="mobile-nav-link">About</a>
+  <a href="blog.html" class="mobile-nav-link">Blog</a>
+  <a href="contact.html" class="mobile-nav-link">Contact</a>
+  <a href="tel:+919999999999" class="btn btn-phone btn-block"><i class="fas fa-phone-alt"></i> Call Now</a>
+  <a href="https://wa.me/919999999999" class="btn btn-whatsapp btn-block" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  <a href="contact.html" class="btn btn-primary btn-block"><i class="fas fa-calendar-check"></i> Book Now</a>
+</div>
+
+<header class="header" id="header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <div class="logo-icon"><i class="fas fa-shield-alt"></i></div>
+      Suraksha <span class="logo-text"><span>Home Services</span></span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="services.html"><i class="fas fa-broom"></i> Services</a></li>
+      <li><a href="pricing.html"><i class="fas fa-rupee-sign"></i> Pricing</a></li>
+      <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="blog.html" class="active"><i class="fas fa-blog"></i> Blog</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="tel:+919999999999" class="nav-phone"><i class="fas fa-phone-alt"></i> +91-9999999999</a>
+      <a href="contact.html" class="btn btn-primary btn-sm"><i class="fas fa-calendar-check"></i> Book Now</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <h1 style="font-size:1.8rem" id="postPageTitle">Blog Post</h1>
+    <div class="page-breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">|</span>
+      <a href="blog.html">Blog</a>
+      <span class="separator">|</span>
+      <span id="postBreadcrumb">Post</span>
+    </div>
+  </div>
+</section>
+
+<section class="blog-post-section">
+  <div class="container">
+    <div id="postContent">
+      <div class="loading-post">
+        <div class="spinner"></div>
+        <p>Loading post...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-grid">
+        <div class="footer-col footer-about">
+          <a href="index.html" class="logo" style="color:var(--white);margin-bottom:20px;display:flex;">
+            <div class="logo-icon"><i class="fas fa-shield-alt"></i></div> Suraksha
+          </a>
+          <p>Suraksha Home Services is India's fastest-growing home cleaning and maintenance company. With over 15,000 happy customers across 25+ cities, we're on a mission to make every Indian home sparkle.</p>
+          <div class="footer-social">
+            <a href="https://facebook.com/surakshahomeservices" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/surakshahomeservices" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/surakshahome" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com/@surakshahomeservices" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://linkedin.com/company/surakshahomeservices" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Deep Cleaning</a></li>
+            <li><a href="services.html">Kitchen Cleaning</a></li>
+            <li><a href="services.html">Bathroom Cleaning</a></li>
+            <li><a href="services.html">Sofa Cleaning</a></li>
+            <li><a href="services.html">Pest Control</a></li>
+            <li><a href="services.html">AC Servicing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Information</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i> B-701, Business Avenue, Andheri East, <strong>Mumbai — 400093</strong>, Maharashtra, India</li>
+            <li><i class="fas fa-phone-alt"></i> <strong><a href="tel:+919999999999" style="color:rgba(255,255,255,0.9)">+91-9999999999</a></strong></li>
+            <li><i class="fab fa-whatsapp"></i> <strong><a href="https://wa.me/919999999999" style="color:rgba(255,255,255,0.9)" target="_blank" rel="noopener">WhatsApp: +91-9999999999</a></strong></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:hello@surakshahomeservices.in" style="color:rgba(255,255,255,0.9)">hello@surakshahomeservices.in</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Suraksha Home Services. All rights reserved. | <a href="index.html">Privacy Policy</a> | <a href="index.html">Terms of Service</a></p>
+      <div class="footer-bottom-links">
+        <a href="index.html">Privacy Policy</a>
+        <a href="index.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="whatsapp-float">
+  <a href="https://wa.me/919999999999" target="_blank" rel="noopener" class="whatsapp-float-btn" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+(function(){var loader=document.getElementById('pageLoader');window.addEventListener('load',function(){setTimeout(function(){loader.classList.add('hidden')},600)})})();
+(function(){var header=document.getElementById('header');window.addEventListener('scroll',function(){if(window.scrollY>80){header.classList.add('scrolled')}else{header.classList.remove('scrolled')}},{passive:true})})();
+(function(){var hamburger=document.getElementById('hamburger'),mobileMenu=document.getElementById('mobileMenu'),overlay=document.getElementById('mobileOverlay'),closeBtn=document.getElementById('closeMenu');function openMenu(){mobileMenu.classList.add('open');overlay.classList.add('active');document.body.style.overflow='hidden'}function closeMenuFunc(){mobileMenu.classList.remove('open');overlay.classList.remove('active');document.body.style.overflow=''}hamburger.addEventListener('click',openMenu);closeBtn.addEventListener('click',closeMenuFunc);overlay.addEventListener('click',closeMenuFunc);document.querySelectorAll('.mobile-nav-link').forEach(function(link){link.addEventListener('click',closeMenuFunc)})})();
+(function(){var backBtn=document.getElementById('backToTop');window.addEventListener('scroll',function(){if(window.scrollY>400){backBtn.classList.add('visible')}else{backBtn.classList.remove('visible')}},{passive:true});backBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
+
+(function(){var container=document.getElementById('postContent');var params=new URLSearchParams(window.location.search);var slug=params.get('slug');if(!slug){container.innerHTML='<div style="text-align:center;padding:60px 20px"><i class="fas fa-exclamation-triangle" style="font-size:3rem;color:var(--gray-400);margin-bottom:20px"></i><h2>Post not found</h2><p style="color:var(--text-secondary);margin-bottom:20px">The blog post you are looking for does not exist.</p><a href="blog.html" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Back to Blog</a></div>';return}$.ajax({url:'/api/blog/'+slug,method:'GET',success:function(post){var imageHtml=post.image?'<img class="featured-image" src="'+post.image+'" alt="'+post.title+'" onerror="this.style.display=\'none\'">':'';var d=new Date(post.date);var dateStr=d.toLocaleDateString('en-IN',{year:'numeric',month:'long',day:'numeric'});var shareUrl=encodeURIComponent(window.location.href);var shareText=encodeURIComponent(post.title);container.innerHTML='<div class="blog-post-layout"><article class="blog-post-article">'+imageHtml+'<div class="post-header"><span class="post-category">'+post.category+'</span><h1>'+post.title+'</h1><div class="post-meta"><span><i class="fas fa-user"></i> '+post.author+'</span><span><i class="fas fa-calendar-alt"></i> '+dateStr+'</span><span><i class="fas fa-folder"></i> '+post.category+'</span></div></div><div class="post-body">'+post.content+'</div><div class="share-section"><span>Share this post:</span><a class="share-btn facebook" href="https://www.facebook.com/sharer/sharer.php?u='+shareUrl+'" target="_blank" rel="noopener" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a><a class="share-btn twitter" href="https://twitter.com/intent/tweet?text='+shareText+'&url='+shareUrl+'" target="_blank" rel="noopener" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a><a class="share-btn whatsapp" href="https://wa.me/?text='+shareText+'%20'+shareUrl+'" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a><a class="share-btn linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url='+shareUrl+'" target="_blank" rel="noopener" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a><a class="share-btn email" href="mailto:?subject='+shareText+'&body='+shareUrl+'" aria-label="Share via Email"><i class="fas fa-envelope"></i></a></div></article><aside class="blog-sidebar"><div class="sidebar-widget"><h4>Categories</h4><ul><li><a href="blog.html"><i class="fas fa-chevron-right"></i> Cleaning Tips</a></li><li><a href="blog.html"><i class="fas fa-chevron-right"></i> Maintenance Tips</a></li><li><a href="blog.html"><i class="fas fa-chevron-right"></i> Green Living</a></li><li><a href="blog.html"><i class="fas fa-chevron-right"></i> Moving Tips</a></li></ul></div><div class="sidebar-widget"><h4>Recent Posts</h4><ul id="recentPostsList"></ul></div><div class="sidebar-cta sidebar-widget"><h4>Book a Service</h4><p>Ready for a sparkling clean home? Get 20% off your first service.</p><a href="contact.html" class="btn btn-secondary btn-block"><i class="fas fa-calendar-check"></i> Book Now</a></div></aside></div><div class="related-posts" id="relatedPosts"><h2>Related <span style="background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Posts</span></h2><div class="related-grid" id="relatedGrid"></div></div>';document.title=post.title+' - Suraksha Home Services';document.getElementById('postPageTitle').textContent=post.title;document.getElementById('postBreadcrumb').textContent=post.title;var metaDesc=document.querySelector('meta[name="description"]');if(metaDesc)metaDesc.setAttribute('content',post.excerpt||post.title);var ogTitle=document.getElementById('ogTitle');if(ogTitle)ogTitle.setAttribute('content',post.title+' - Suraksha Home Services');var ogDesc=document.getElementById('ogDesc');if(ogDesc)ogDesc.setAttribute('content',post.excerpt||post.title);var twTitle=document.getElementById('twTitle');if(twTitle)twTitle.setAttribute('content',post.title+' - Suraksha Home Services');var twDesc=document.getElementById('twDesc');if(twDesc)twDesc.setAttribute('content',post.excerpt||post.title);$.ajax({url:'/api/blog',method:'GET',success:function(allPosts){var related=allPosts.filter(function(p){return p.slug!==slug&&p.category===post.category}).slice(0,3);if(related.length<3){var extras=allPosts.filter(function(p){return p.slug!==slug&&p.category!==post.category}).slice(0,3-related.length);related=related.concat(extras)}var recentList=document.getElementById('recentPostsList');var grid=document.getElementById('relatedGrid');if(recentList){allPosts.slice(0,5).forEach(function(p){var li=document.createElement('li');li.innerHTML='<a href="blog-post.html?slug='+p.slug+'"><i class="fas fa-chevron-right"></i> '+p.title+'</a>';recentList.appendChild(li)})}if(grid){if(related.length===0){grid.innerHTML='<p style="grid-column:1/-1;text-align:center;color:var(--text-light)">No related posts found.</p>'}else{related.forEach(function(p){var card=document.createElement('div');card.className='related-card';card.innerHTML='<img src="'+p.image+'" alt="'+p.title+'" loading="lazy" onerror="this.style.display=\'none\'"><div class="related-body"><h4><a href="blog-post.html?slug='+p.slug+'">'+p.title+'</a></h4><div class="related-meta">'+p.category+'</div></div>';grid.appendChild(card)})}}},error:function(){}})},error:function(){container.innerHTML='<div style="text-align:center;padding:60px 20px"><i class="fas fa-exclamation-triangle" style="font-size:3rem;color:var(--gray-400);margin-bottom:20px"></i><h2>Post not found</h2><p style="color:var(--text-secondary);margin-bottom:20px">The blog post you are looking for could not be loaded.</p><a href="blog.html" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Back to Blog</a></div>'}})})();
+</script>
+</body>
+</html>

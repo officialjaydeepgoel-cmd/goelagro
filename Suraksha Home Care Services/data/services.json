@@ -1,0 +1,391 @@
+[
+  {
+    "id": "deep-cleaning",
+    "name": "Professional Deep Cleaning",
+    "category": "cleaning",
+    "description": "Complete deep cleaning of your entire home using eco-friendly products and professional equipment.",
+    "shortDesc": "Complete home deep cleaning service",
+    "icon": "fas fa-broom",
+    "image": "/uploads/deep-cleaning.jpg",
+    "features": ["Eco-friendly products", "Trained professionals", "100% satisfaction", "Insurance covered"],
+    "packages": [
+      { "name": "Basic", "price": "₹2,999", "details": "2 BHK - 3 rooms, Living, Kitchen, 1 Bathroom", "popular": false },
+      { "name": "Standard", "price": "₹4,999", "details": "3 BHK - All rooms, Living, Kitchen, 2 Bathrooms, Balcony", "popular": true },
+      { "name": "Premium", "price": "₹7,999", "details": "4 BHK - All rooms, Living, Kitchen, 3 Bathrooms, Balcony, Store", "popular": false }
+    ],
+    "faqs": [
+      {"q": "How long does deep cleaning take?", "a": "Typically 4-8 hours depending on home size."},
+      {"q": "Do I need to be home?", "a": "Not necessary, we can coordinate key access."}
+    ]
+  },
+  {
+    "id": "kitchen-cleaning",
+    "name": "Kitchen Deep Cleaning",
+    "category": "cleaning",
+    "description": "Degrease, scrub, and sanitize your entire kitchen including appliances, cabinets, countertops, and floors.",
+    "shortDesc": "Kitchen degreasing and sanitization",
+    "icon": "fas fa-utensils",
+    "image": "/uploads/kitchen-cleaning.jpg",
+    "features": ["Chimney degreasing", "Cabinet cleaning", "Appliance sanitization", "Floor scrubbing"],
+    "packages": [
+      { "name": "Basic", "price": "₹1,499", "details": "Modular kitchen - Counter, sink, floor, chimney exterior", "popular": false },
+      { "name": "Standard", "price": "₹2,499", "details": "Full kitchen - Cabinets interior, appliances, chimney, floor", "popular": true },
+      { "name": "Premium", "price": "₹3,999", "details": "Complete kitchen + pantry + store room cleaning", "popular": false }
+    ],
+    "faqs": [
+      {"q": "Do you clean inside the refrigerator?", "a": "Yes, Premium package includes refrigerator cleaning."}
+    ]
+  },
+  {
+    "id": "bathroom-cleaning",
+    "name": "Bathroom Deep Cleaning",
+    "category": "cleaning",
+    "description": "Scrub, disinfect, and restore your bathrooms to sparkling clean condition.",
+    "shortDesc": "Bathroom disinfection and scrubbing",
+    "icon": "fas fa-shower",
+    "image": "/uploads/bathroom-cleaning.jpg",
+    "features": ["Tile scrubbing", "Fixture cleaning", "Mold removal", "Disinfection"],
+    "packages": [
+      { "name": "Basic", "price": "₹799", "details": "1 bathroom - Floor, walls, basin, commode", "popular": false },
+      { "name": "Standard", "price": "₹1,299", "details": "1 bathroom - Full scrub, fixtures, glass, ceiling", "popular": true },
+      { "name": "Premium", "price": "₹1,999", "details": "1 bathroom + steam disinfection + mold treatment", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "sofa-cleaning",
+    "name": "Sofa Cleaning",
+    "category": "cleaning",
+    "description": "Professional sofa and upholstery cleaning using hot water extraction method.",
+    "shortDesc": "Upholstery stain removal and cleaning",
+    "icon": "fas fa-couch",
+    "image": "/uploads/sofa-cleaning.jpg",
+    "features": ["Stain removal", "Deodorizing", "Fabric safe", "Quick drying"],
+    "packages": [
+      { "name": "Basic", "price": "₹699", "details": "3-seater sofa cleaning", "popular": false },
+      { "name": "Standard", "price": "₹1,299", "details": "3+2 seater sofa set cleaning", "popular": true },
+      { "name": "Premium", "price": "₹2,499", "details": "Full sofa set + 2 chairs + ottoman", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "mattress-cleaning",
+    "name": "Mattress Cleaning",
+    "category": "cleaning",
+    "description": "Deep clean and sanitize your mattresses to remove dust mites, allergens, and stains.",
+    "shortDesc": "Mattress sanitization and stain removal",
+    "icon": "fas fa-bed",
+    "image": "/uploads/mattress-cleaning.jpg",
+    "features": ["Dust mite removal", "UV sanitization", "Stain treatment", "Deodorizing"],
+    "packages": [
+      { "name": "Basic", "price": "₹599", "details": "Single mattress cleaning", "popular": false },
+      { "name": "Standard", "price": "₹999", "details": "Queen size mattress + UV treatment", "popular": true },
+      { "name": "Premium", "price": "₹1,799", "details": "King size mattress + UV + stain guard coating", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "carpet-cleaning",
+    "name": "Carpet Cleaning",
+    "category": "cleaning",
+    "description": "Professional carpet cleaning using hot water extraction and eco-friendly solutions.",
+    "shortDesc": "Carpet stain and dirt removal",
+    "icon": "fas fa-rug",
+    "image": "/uploads/carpet-cleaning.jpg",
+    "features": ["Deep extraction", "Stain removal", "Deodorizing", "Anti-allergen"],
+    "packages": [
+      { "name": "Basic", "price": "₹499", "details": "Small carpet (up to 4x6 ft)", "popular": false },
+      { "name": "Standard", "price": "₹999", "details": "Medium carpet (up to 6x9 ft) + deodorizing", "popular": true },
+      { "name": "Premium", "price": "₹1,999", "details": "Large carpet (up to 9x12 ft) + stain guard", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "curtain-cleaning",
+    "name": "Curtain Cleaning",
+    "category": "cleaning",
+    "description": "Professional curtain and drape cleaning service.",
+    "shortDesc": "Curtain dust removal and cleaning",
+    "icon": "fas fa-wind",
+    "image": "/uploads/curtain-cleaning.jpg",
+    "features": ["Dust removal", "Fabric safe", "Deodorizing", "Stain treatment"],
+    "packages": [
+      { "name": "Basic", "price": "₹399", "details": "Up to 3 curtain panels", "popular": false },
+      { "name": "Standard", "price": "₹799", "details": "Up to 6 curtain panels + deodorizing", "popular": true },
+      { "name": "Premium", "price": "₹1,499", "details": "All curtains + lining + valance cleaning", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "office-cleaning",
+    "name": "Office Cleaning",
+    "category": "commercial",
+    "description": "Complete office and workspace cleaning services for businesses.",
+    "shortDesc": "Commercial office cleaning",
+    "icon": "fas fa-building",
+    "image": "/uploads/office-cleaning.jpg",
+    "features": ["Daily/weekly plans", "Floor maintenance", "Waste management", "Sanitization"],
+    "packages": [
+      { "name": "Basic", "price": "₹1,999", "details": "Small office (up to 500 sq ft) - Weekly cleaning", "popular": false },
+      { "name": "Standard", "price": "₹4,999", "details": "Medium office (500-1500 sq ft) - Bi-weekly", "popular": true },
+      { "name": "Premium", "price": "₹9,999", "details": "Large office (1500+ sq ft) - Daily cleaning", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "pest-control",
+    "name": "Pest Control",
+    "category": "maintenance",
+    "description": "Safe and effective pest control solutions for homes and offices.",
+    "shortDesc": "Pest elimination and prevention",
+    "icon": "fas fa-spider",
+    "image": "/uploads/pest-control.jpg",
+    "features": ["Safe chemicals", "Child/pet safe", "Warranty", "Prevention plan"],
+    "packages": [
+      { "name": "Basic", "price": "₹999", "details": "1 BHK - Cockroach + Ant control", "popular": false },
+      { "name": "Standard", "price": "₹1,799", "details": "2 BHK - Cockroach + Ant + Mosquito", "popular": true },
+      { "name": "Premium", "price": "₹2,999", "details": "3 BHK - Full pest control + termite inspection + 3 month warranty", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "electrician",
+    "name": "Electrician",
+    "category": "maintenance",
+    "description": "Licensed and experienced electricians for all electrical needs.",
+    "shortDesc": "Electrical repair and installation",
+    "icon": "fas fa-bolt",
+    "image": "/uploads/electrician.jpg",
+    "features": ["Licensed professionals", "Same-day service", "Warranty on work", "Safety certified"],
+    "packages": [
+      { "name": "Basic", "price": "₹199", "details": "Switch/board repair or replacement", "popular": false },
+      { "name": "Standard", "price": "₹499", "details": "Fan/light installation + minor wiring", "popular": true },
+      { "name": "Premium", "price": "₹1,999", "details": "Full house wiring + earthing check + MCB installation", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "plumber",
+    "name": "Plumber",
+    "category": "maintenance",
+    "description": "Expert plumbing services for repairs, installation, and maintenance.",
+    "shortDesc": "Plumbing repair and installation",
+    "icon": "fas fa-wrench",
+    "image": "/uploads/plumber.jpg",
+    "features": ["Expert plumbers", "Quick service", "Quality parts", "Work guarantee"],
+    "packages": [
+      { "name": "Basic", "price": "₹249", "details": "Tap/faucet repair or replacement", "popular": false },
+      { "name": "Standard", "price": "₹699", "details": "Basin/kitchen sink installation + pipe repair", "popular": true },
+      { "name": "Premium", "price": "₹1,499", "details": "Water heater installation + full plumbing check + tank repair", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "carpenter",
+    "name": "Carpenter",
+    "category": "maintenance",
+    "description": "Skilled carpenters for furniture repair, assembly, and custom work.",
+    "shortDesc": "Furniture repair and carpentry",
+    "icon": "fas fa-hammer",
+    "image": "/uploads/carpenter.jpg",
+    "features": ["Skilled craftsmen", "Custom solutions", "Quality materials", "On-time delivery"],
+    "packages": [
+      { "name": "Basic", "price": "₹349", "details": "Door/window repair + hinge replacement", "popular": false },
+      { "name": "Standard", "price": "₹999", "details": "Furniture assembly + drawer repair + lock installation", "popular": true },
+      { "name": "Premium", "price": "₹2,999", "details": "Custom furniture making + modular kitchen repair + wardrobe installation", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "painter",
+    "name": "Painter",
+    "category": "maintenance",
+    "description": "Professional painting services for homes and offices.",
+    "shortDesc": "Home and office painting",
+    "icon": "fas fa-paint-roller",
+    "image": "/uploads/painter.jpg",
+    "features": ["Premium paints", "Surface prep", "Clean finish", "Color consultation"],
+    "packages": [
+      { "name": "Basic", "price": "₹4,999", "details": "1 room painting (walls only) with basic paint", "popular": false },
+      { "name": "Standard", "price": "₹9,999", "details": "2 rooms + hall painting with premium paint", "popular": true },
+      { "name": "Premium", "price": "₹24,999", "details": "Full home painting + ceiling + texture finish + putty", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "ac-cleaning",
+    "name": "AC Cleaning & Servicing",
+    "category": "maintenance",
+    "description": "Complete AC cleaning, servicing, and maintenance by certified technicians.",
+    "shortDesc": "AC repair and maintenance",
+    "icon": "fas fa-snowflake",
+    "image": "/uploads/ac-cleaning.jpg",
+    "features": ["Certified technicians", "Gas check", "Deep cleaning", "Performance boost"],
+    "packages": [
+      { "name": "Basic", "price": "₹449", "details": "AC filter cleaning + outer unit wipe + performance check", "popular": false },
+      { "name": "Standard", "price": "₹999", "details": "AC deep cleaning + coil cleaning + gas pressure check", "popular": true },
+      { "name": "Premium", "price": "₹1,999", "details": "AC full servicing + gas refill + comprehensive check + 3 month warranty", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "water-tank-cleaning",
+    "name": "Water Tank Cleaning",
+    "category": "cleaning",
+    "description": "Professional water tank cleaning and disinfection service.",
+    "shortDesc": "Tank cleaning and sanitization",
+    "icon": "fas fa-water",
+    "image": "/uploads/water-tank.jpg",
+    "features": ["Anti-bacterial treatment", "Sludge removal", "Disinfection", "Safe drinking water"],
+    "packages": [
+      { "name": "Basic", "price": "₹999", "details": "Up to 500L tank cleaning + disinfection", "popular": false },
+      { "name": "Standard", "price": "₹1,799", "details": "500-1000L tank + anti-bacterial coating", "popular": true },
+      { "name": "Premium", "price": "₹2,999", "details": "1000L+ tank + full coating + water quality test", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "marble-polishing",
+    "name": "Marble Polishing",
+    "category": "cleaning",
+    "description": "Restore the shine and elegance of your marble floors with professional polishing.",
+    "shortDesc": "Marble floor restoration",
+    "icon": "fas fa-gem",
+    "image": "/uploads/marble-polishing.jpg",
+    "features": ["Crystalization", "Stain removal", "High gloss finish", "Anti-slip option"],
+    "packages": [
+      { "name": "Basic", "price": "₹4,999", "details": "Up to 500 sq ft - grinding + polishing", "popular": false },
+      { "name": "Standard", "price": "₹8,999", "details": "500-1000 sq ft - grinding + polishing + crystallization", "popular": true },
+      { "name": "Premium", "price": "₹14,999", "details": "1000+ sq ft - full restoration + anti-slip + 1 year warranty", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "move-in-cleaning",
+    "name": "Move-in/Move-out Cleaning",
+    "category": "cleaning",
+    "description": "Thorough cleaning service for moving in or out of a property.",
+    "shortDesc": "Relocation cleaning service",
+    "icon": "fas fa-truck-moving",
+    "image": "/uploads/move-cleaning.jpg",
+    "features": ["Full home coverage", "Deep sanitization", "Quick service", "Bond back guarantee"],
+    "packages": [
+      { "name": "Basic", "price": "₹3,999", "details": "1 BHK - Full cleaning + kitchen + bathroom", "popular": false },
+      { "name": "Standard", "price": "₹5,999", "details": "2 BHK - Full cleaning + kitchen + 2 bathrooms + balcony", "popular": true },
+      { "name": "Premium", "price": "₹8,999", "details": "3 BHK - Complete cleaning + carpet + windows + full sanitization", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "floor-scrubbing",
+    "name": "Floor Scrubbing & Polishing",
+    "category": "cleaning",
+    "description": "Professional floor scrubbing, polishing, and maintenance using industrial machines.",
+    "shortDesc": "Floor cleaning and polishing",
+    "icon": "fas fa-brush",
+    "image": "/uploads/floor-scrubbing.jpg",
+    "features": ["Industrial machines", "Eco solutions", "Streak-free finish", "All floor types"],
+    "packages": [
+      { "name": "Basic", "price": "₹1,499", "details": "Up to 500 sq ft floor scrubbing", "popular": false },
+      { "name": "Standard", "price": "₹2,999", "details": "500-1000 sq ft scrubbing + polishing", "popular": true },
+      { "name": "Premium", "price": "₹4,999", "details": "1000+ sq ft scrubbing + polishing + sealing", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "post-construction",
+    "name": "Post Construction Cleaning",
+    "category": "cleaning",
+    "description": "Heavy-duty cleaning after construction or renovation work.",
+    "shortDesc": "Construction debris cleanup",
+    "icon": "fas fa-hard-hat",
+    "image": "/uploads/post-construction.jpg",
+    "features": ["Debris removal", "Dust elimination", "Surface restoration", "Ready to move"],
+    "packages": [
+      { "name": "Basic", "price": "₹5,999", "details": "1 BHK - Debris removal + dusting + floor cleaning", "popular": false },
+      { "name": "Standard", "price": "₹9,999", "details": "2 BHK - Full cleaning + window + bathroom + kitchen", "popular": true },
+      { "name": "Premium", "price": "₹14,999", "details": "3 BHK - Complete restoration + polishing + sanitization + deep clean", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "housekeeping",
+    "name": "Housekeeping Services",
+    "category": "maintenance",
+    "description": "Regular housekeeping staff for daily or weekly home maintenance.",
+    "shortDesc": "Daily/weekly housekeeping staff",
+    "icon": "fas fa-hand-sparkles",
+    "image": "/uploads/housekeeping.jpg",
+    "features": ["Trained staff", "Background verified", "Flexible hours", "Regular reporting"],
+    "packages": [
+      { "name": "Basic", "price": "₹4,999/month", "details": "Daily 2 hours - Basic cleaning + dusting", "popular": false },
+      { "name": "Standard", "price": "₹7,999/month", "details": "Daily 4 hours - Full cleaning + kitchen + bathroom", "popular": true },
+      { "name": "Premium", "price": "₹11,999/month", "details": "Daily 6 hours - Complete home care + laundry + cooking assistance", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "elder-care",
+    "name": "Elder Care",
+    "category": "care",
+    "description": "Compassionate and professional elder care services for your loved ones.",
+    "shortDesc": "Elderly care and assistance",
+    "icon": "fas fa-heart",
+    "image": "/uploads/elder-care.jpg",
+    "features": ["Trained caregivers", "Medical background", "24/7 support", "Compassionate care"],
+    "packages": [
+      { "name": "Basic", "price": "₹8,999/month", "details": "Daily 4 hours - Companionship + light housekeeping", "popular": false },
+      { "name": "Standard", "price": "₹14,999/month", "details": "Daily 8 hours - Full care + meals + medication reminders", "popular": true },
+      { "name": "Premium", "price": "₹24,999/month", "details": "24/7 live-in care + nursing + physiotherapy assistance", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "patient-care",
+    "name": "Patient Care",
+    "category": "care",
+    "description": "Professional patient care services for recovery and daily assistance.",
+    "shortDesc": "Post-surgery and patient care",
+    "icon": "fas fa-user-md",
+    "image": "/uploads/patient-care.jpg",
+    "features": ["Trained nurses", "Medical equipment", "24/7 availability", "Recovery support"],
+    "packages": [
+      { "name": "Basic", "price": "₹9,999/month", "details": "Daily 4 hours - Basic care + vitals monitoring", "popular": false },
+      { "name": "Standard", "price": "₹16,999/month", "details": "Daily 8 hours - Full care + medication + physiotherapy", "popular": true },
+      { "name": "Premium", "price": "₹29,999/month", "details": "24/7 live-in care + nursing + doctor coordination", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "gardening",
+    "name": "Gardening",
+    "category": "maintenance",
+    "description": "Professional gardening and lawn maintenance services.",
+    "shortDesc": "Garden design and maintenance",
+    "icon": "fas fa-leaf",
+    "image": "/uploads/gardening.jpg",
+    "features": ["Landscaping", "Lawn mowing", "Plant care", "Seasonal planting"],
+    "packages": [
+      { "name": "Basic", "price": "₹999", "details": "Small garden - Mowing + trimming + watering", "popular": false },
+      { "name": "Standard", "price": "₹2,499", "details": "Medium garden - Full maintenance + pruning + fertilizing", "popular": true },
+      { "name": "Premium", "price": "₹4,999", "details": "Large garden - Complete landscaping + design + seasonal planting", "popular": false }
+    ],
+    "faqs": []
+  },
+  {
+    "id": "packers-movers",
+    "name": "Packers & Movers",
+    "category": "services",
+    "description": "Reliable packing and moving services for households and offices.",
+    "shortDesc": "Home and office relocation",
+    "icon": "fas fa-truck",
+    "image": "/uploads/packers-movers.jpg",
+    "features": ["Insurance covered", "Quality packing", "Timely delivery", "Damage-free moving"],
+    "packages": [
+      { "name": "Basic", "price": "₹4,999", "details": "1 BHK - Local move within city", "popular": false },
+      { "name": "Standard", "price": "₹9,999", "details": "2 BHK - Local move + packing materials + insurance", "popular": true },
+      { "name": "Premium", "price": "₹19,999", "details": "3 BHK - Interstate move + full packing + insurance + unpacking", "popular": false }
+    ],
+    "faqs": []
+  }
+]

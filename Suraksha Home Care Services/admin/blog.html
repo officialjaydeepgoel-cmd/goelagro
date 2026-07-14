@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog - Suraksha Home Services</title>
+<link rel="stylesheet" href="../css/admin.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="admin-wrapper">
+  <aside class="admin-sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">SH</div>
+      <div class="sidebar-brand">Suraksha<span>Admin Panel</span></div>
+      <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+    </div>
+    <div class="sidebar-user">
+      <div class="sidebar-user-avatar">A</div>
+      <div class="sidebar-user-info">
+        <span class="name">Admin</span>
+        <span class="role">Super Admin</span>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Main</div>
+        <a href="dashboard.html" class="sidebar-nav-item"><i class="fas fa-th-large"></i><span class="nav-label">Dashboard</span></a>
+        <a href="services.html" class="sidebar-nav-item"><i class="fas fa-concierge-bell"></i><span class="nav-label">Services</span></a>
+        <a href="gallery.html" class="sidebar-nav-item"><i class="fas fa-images"></i><span class="nav-label">Gallery</span></a>
+        <a href="bookings.html" class="sidebar-nav-item"><i class="fas fa-calendar-check"></i><span class="nav-label">Bookings</span><span class="nav-badge">12</span></a>
+        <a href="reviews.html" class="sidebar-nav-item"><i class="fas fa-star"></i><span class="nav-label">Reviews</span></a>
+        <a href="blog.html" class="sidebar-nav-item active"><i class="fas fa-blog"></i><span class="nav-label">Blog</span></a>
+        <a href="contacts.html" class="sidebar-nav-item"><i class="fas fa-envelope"></i><span class="nav-label">Contacts</span><span class="nav-badge">5</span></a>
+        <a href="settings.html" class="sidebar-nav-item"><i class="fas fa-cog"></i><span class="nav-label">Settings</span></a>
+      </div>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="index.html" class="sidebar-nav-item"><i class="fas fa-sign-out-alt"></i><span class="nav-label">Logout</span></a>
+    </div>
+  </aside>
+  <div class="admin-sidebar-overlay" id="sidebarOverlay"></div>
+  <main class="admin-main">
+    <header class="admin-header">
+      <div class="admin-header-left">
+        <button class="admin-header-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
+        <div class="admin-header-search">
+          <i class="fas fa-search"></i>
+          <input type="text" id="blogSearch" placeholder="Search posts...">
+        </div>
+      </div>
+      <div class="admin-header-right">
+        <button class="admin-header-btn"><i class="fas fa-bell"></i><span class="notification-count">3</span></button>
+        <div class="admin-header-profile">
+          <div class="admin-header-avatar">A</div>
+          <div class="info">
+            <span class="name">Admin</span>
+            <span class="role">Super Admin</span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="admin-page">
+      <div class="admin-breadcrumb">
+        <a href="dashboard.html">Home</a>
+        <span class="separator"><i class="fas fa-chevron-right"></i></span>
+        <span class="current">Blog</span>
+      </div>
+      <div class="admin-page-header">
+        <div class="admin-page-title">
+          <h1>Blog</h1>
+          <p>Manage blog posts and articles</p>
+        </div>
+        <div class="admin-page-actions">
+          <button class="admin-btn admin-btn-primary" id="newPostBtn"><i class="fas fa-plus"></i> New Post</button>
+        </div>
+      </div>
+      <div class="table-card">
+        <div class="table-card-header">
+          <h3><i class="fas fa-blog" style="margin-right:8px;color:var(--primary)"></i> All Posts</h3>
+          <div class="table-actions">
+            <select id="blogCategoryFilter" class="admin-form-control" style="width:150px;padding:8px 12px">
+              <option value="">All Categories</option>
+              <option value="cleaning-tips">Cleaning Tips</option>
+              <option value="home-maintenance">Home Maintenance</option>
+              <option value="guides">Guides</option>
+              <option value="news">News</option>
+            </select>
+          </div>
+        </div>
+        <div class="table-card-body">
+          <table class="data-table" id="blogTable">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="blogBody">
+              <tr>
+                <td><strong>10 Essential Home Cleaning Tips for Busy Professionals</strong></td>
+                <td>Admin</td>
+                <td><span class="status-badge confirmed" style="font-size:0.75rem">Cleaning Tips</span></td>
+                <td>14 Jul 2026</td>
+                <td><span class="status-badge published">Published</span></td>
+                <td><div class="cell-action"><button class="cell-action-icon edit" onclick="editPost('1')"><i class="fas fa-edit"></i></button><button class="cell-action-icon delete" onclick="deletePost('1')"><i class="fas fa-trash"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><strong>How Often Should You Get Your Kitchen Deep Cleaned?</strong></td>
+                <td>Admin</td>
+                <td><span class="status-badge confirmed" style="font-size:0.75rem">Guides</span></td>
+                <td>12 Jul 2026</td>
+                <td><span class="status-badge published">Published</span></td>
+                <td><div class="cell-action"><button class="cell-action-icon edit" onclick="editPost('2')"><i class="fas fa-edit"></i></button><button class="cell-action-icon delete" onclick="deletePost('2')"><i class="fas fa-trash"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><strong>The Ultimate Guide to Eco-Friendly Home Cleaning</strong></td>
+                <td>Admin</td>
+                <td><span class="status-badge confirmed" style="font-size:0.75rem">Cleaning Tips</span></td>
+                <td>10 Jul 2026</td>
+                <td><span class="status-badge published">Published</span></td>
+                <td><div class="cell-action"><button class="cell-action-icon edit" onclick="editPost('3')"><i class="fas fa-edit"></i></button><button class="cell-action-icon delete" onclick="deletePost('3')"><i class="fas fa-trash"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><strong>Bathroom Cleaning Hacks That Actually Work</strong></td>
+                <td>Admin</td>
+                <td><span class="status-badge confirmed" style="font-size:0.75rem">Home Maintenance</span></td>
+                <td>08 Jul 2026</td>
+                <td><span class="status-badge draft" style="background:var(--blue-light);color:var(--blue)"><span class="status-badge">Draft</span></td>
+                <td><div class="cell-action"><button class="cell-action-icon edit" onclick="editPost('4')"><i class="fas fa-edit"></i></button><button class="cell-action-icon delete" onclick="deletePost('4')"><i class="fas fa-trash"></i></button></div></td>
+              </tr>
+              <tr>
+                <td><strong>Why Regular Home Maintenance Saves You Money</strong></td>
+                <td>Admin</td>
+                <td><span class="status-badge confirmed" style="font-size:0.75rem">Home Maintenance</span></td>
+                <td>06 Jul 2026</td>
+                <td><span class="status-badge draft" style="background:var(--blue-light);color:var(--blue)"><span class="status-badge">Draft</span></td>
+                <td><div class="cell-action"><button class="cell-action-icon edit" onclick="editPost('5')"><i class="fas fa-edit"></i></button><button class="cell-action-icon delete" onclick="deletePost('5')"><i class="fas fa-trash"></i></button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-footer">
+          <span class="info">Showing 5 of 5 posts</span>
+          <div class="table-pagination">
+            <button disabled><i class="fas fa-chevron-left"></i></button>
+            <button class="active">1</button>
+            <button disabled><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<div class="admin-modal-overlay" id="blogModal">
+  <div class="admin-modal admin-modal-lg">
+    <div class="admin-modal-header">
+      <h3 id="blogModalTitle">Create New Post</h3>
+      <button class="admin-modal-close" id="closeBlogModal"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="admin-modal-body">
+      <form id="blogForm">
+        <div class="admin-form-grid">
+          <div class="admin-form-group full-width">
+            <label class="admin-form-label">Title <span class="required">*</span></label>
+            <input type="text" id="postTitle" class="admin-form-control" placeholder="Enter post title" required>
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-form-label">Slug</label>
+            <input type="text" id="postSlug" class="admin-form-control" placeholder="auto-generated-from-title">
+            <div class="admin-form-hint">Auto-generated from title. Edit if needed.</div>
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-form-label">Category <span class="required">*</span></label>
+            <select id="postCategory" class="admin-form-control" required>
+              <option value="">Select Category</option>
+              <option value="cleaning-tips">Cleaning Tips</option>
+              <option value="home-maintenance">Home Maintenance</option>
+              <option value="guides">Guides</option>
+              <option value="news">News</option>
+            </select>
+          </div>
+          <div class="admin-form-group full-width">
+            <label class="admin-form-label">Excerpt</label>
+            <textarea id="postExcerpt" class="admin-form-control" placeholder="Brief summary of the post" rows="2"></textarea>
+          </div>
+          <div class="admin-form-group full-width">
+            <label class="admin-form-label">Content <span class="required">*</span></label>
+            <textarea id="postContent" class="admin-form-control" placeholder="Write your full blog post content here..." rows="10" required></textarea>
+            <div class="admin-form-hint">You can use HTML tags for formatting</div>
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-form-label">Author <span class="required">*</span></label>
+            <input type="text" id="postAuthor" class="admin-form-control" placeholder="e.g. Suraksha Team" value="Admin" required>
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-form-label">Tags</label>
+            <input type="text" id="postTags" class="admin-form-control" placeholder="cleaning, tips, maintenance">
+            <div class="admin-form-hint">Comma separated</div>
+          </div>
+          <div class="admin-form-group full-width">
+            <label class="admin-form-label">Featured Image</label>
+            <div class="admin-form-file">
+              <input type="file" id="postImage" accept="image/*">
+              <div class="file-upload-box" id="postImageDrop">
+                <div class="file-upload-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                <div class="file-upload-text">Drop featured image here</div>
+                <div class="file-upload-hint">or click to browse (JPG, PNG, WebP)</div>
+              </div>
+            </div>
+            <div class="file-upload-list" id="postFileList"></div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="admin-modal-footer">
+      <button class="admin-btn admin-btn-secondary" id="cancelBlogModal">Cancel</button>
+      <button class="admin-btn admin-btn-primary" id="savePost"><i class="fas fa-save"></i> Save Post</button>
+    </div>
+  </div>
+</div>
+<div class="admin-modal-overlay" id="deleteModal">
+  <div class="admin-modal admin-modal-sm">
+    <div class="admin-modal-header">
+      <h3>Delete Post</h3>
+      <button class="admin-modal-close" id="closeDeleteModal"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="admin-modal-body">
+      <p style="text-align:center;font-size:1rem;color:var(--text-secondary)">Are you sure you want to delete this blog post? This action cannot be undone.</p>
+    </div>
+    <div class="admin-modal-footer">
+      <button class="admin-btn admin-btn-secondary" id="cancelDelete">Cancel</button>
+      <button class="admin-btn admin-btn-danger" id="confirmDelete"><i class="fas fa-trash"></i> Delete</button>
+    </div>
+  </div>
+</div>
+<script>
+(function() {
+  var blogModal = document.getElementById('blogModal');
+  var deleteModal = document.getElementById('deleteModal');
+  var newPostBtn = document.getElementById('newPostBtn');
+  var closeBlog = document.getElementById('closeBlogModal');
+  var cancelBlog = document.getElementById('cancelBlogModal');
+  var closeDelete = document.getElementById('closeDeleteModal');
+  var cancelDelete = document.getElementById('cancelDelete');
+  var confirmDelete = document.getElementById('confirmDelete');
+  var blogModalTitle = document.getElementById('blogModalTitle');
+  var postTitle = document.getElementById('postTitle');
+  var postSlug = document.getElementById('postSlug');
+  var deleteTarget = null;
+  function showToast(title, text, type) {
+    var container = document.getElementById('notification-container') || (function(){
+      var c = document.createElement('div');
+      c.className = 'notification-container';
+      c.id = 'notification-container';
+      document.body.appendChild(c);
+      return c;
+    })();
+    var toast = document.createElement('div');
+    toast.className = 'notification-toast ' + (type || 'success');
+    toast.innerHTML = '<div class="notification-toast-icon"><i class="fas fa-check-circle"></i></div><div class="notification-toast-content"><div class="notification-toast-title">' + title + '</div><div class="notification-toast-text">' + text + '</div></div><button class="notification-toast-close" onclick="this.parentElement.remove()"><i class="fas fa-times"></i></button>';
+    container.appendChild(toast);
+    setTimeout(function() { if (toast.parentElement) toast.remove(); }, 4000);
+  }
+  function openBlogModal(title) {
+    blogModalTitle.textContent = title || 'Create New Post';
+    blogModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeBlogModal() {
+    blogModal.classList.remove('active');
+    document.body.style.overflow = '';
+    document.getElementById('blogForm').reset();
+    document.getElementById('postFileList').innerHTML = '';
+  }
+  newPostBtn.addEventListener('click', function() { openBlogModal('Create New Post'); });
+  closeBlog.addEventListener('click', closeBlogModal);
+  cancelBlog.addEventListener('click', closeBlogModal);
+  window.editPost = function(id) { openBlogModal('Edit Post'); };
+  window.deletePost = function(id) {
+    deleteTarget = id;
+    deleteModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+  closeDelete.addEventListener('click', function() { deleteModal.classList.remove('active'); document.body.style.overflow = ''; });
+  cancelDelete.addEventListener('click', function() { deleteModal.classList.remove('active'); document.body.style.overflow = ''; });
+  confirmDelete.addEventListener('click', function() {
+    deleteModal.classList.remove('active');
+    document.body.style.overflow = '';
+    showToast('Deleted', 'Blog post has been deleted.', 'success');
+  });
+  postTitle.addEventListener('input', function() {
+    var slug = this.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    postSlug.value = slug;
+  });
+  document.getElementById('savePost').addEventListener('click', function() {
+    var title = postTitle;
+    var content = document.getElementById('postContent');
+    var author = document.getElementById('postAuthor');
+    var category = document.getElementById('postCategory');
+    var valid = true;
+    [title, content, author, category].forEach(function(el) {
+      if (!el.value.trim()) { el.classList.add('error'); valid = false; }
+      else el.classList.remove('error');
+    });
+    if (!valid) return;
+    closeBlogModal();
+    showToast('Saved', 'Blog post has been saved successfully.', 'success');
+  });
+  var postImage = document.getElementById('postImage');
+  var postImageDrop = document.getElementById('postImageDrop');
+  var postFileList = document.getElementById('postFileList');
+  postImage.addEventListener('change', function() { handlePostFiles(this.files); });
+  postImageDrop.addEventListener('dragover', function(e) { e.preventDefault(); this.classList.add('dragover'); });
+  postImageDrop.addEventListener('dragleave', function() { this.classList.remove('dragover'); });
+  postImageDrop.addEventListener('drop', function(e) {
+    e.preventDefault();
+    this.classList.remove('dragover');
+    if (e.dataTransfer.files.length) {
+      postImage.files = e.dataTransfer.files;
+      handlePostFiles(e.dataTransfer.files);
+    }
+  });
+  function handlePostFiles(files) {
+    postFileList.innerHTML = '';
+    for (var i = 0; i < files.length; i++) {
+      var f = files[i];
+      var item = document.createElement('div');
+      item.className = 'file-upload-item';
+      var size = (f.size / 1024).toFixed(1);
+      item.innerHTML = '<div class="file-icon"><i class="fas fa-file-image"></i></div><div class="file-info"><span class="file-name">' + f.name + '</span><span class="file-size">' + size + ' KB</span></div><div class="file-remove" onclick="this.parentElement.remove()"><i class="fas fa-times"></i></div>';
+      postFileList.appendChild(item);
+    }
+  }
+})();
+</script>
+</body>
+</html>

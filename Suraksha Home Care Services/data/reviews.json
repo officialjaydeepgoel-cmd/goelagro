@@ -1,0 +1,7 @@
+[
+  { "id": 1, "name": "Rajesh Kumar", "rating": 5, "service": "Deep Cleaning", "review": "Excellent service! The team was professional and thorough. My home looks brand new.", "date": "2026-06-15" },
+  { "id": 2, "name": "Priya Sharma", "rating": 5, "service": "Sofa Cleaning", "review": "My 5-year-old sofa looks like new. Amazing stain removal! Highly recommended.", "date": "2026-06-20" },
+  { "id": 3, "name": "Amit Verma", "rating": 4, "service": "Pest Control", "review": "Very effective pest control. No more cockroaches in the kitchen. Will use again.", "date": "2026-06-25" },
+  { "id": 4, "name": "Sunita Patel", "rating": 5, "service": "Bathroom Cleaning", "review": "Bathrooms are sparkling clean. The team was on time and very respectful.", "date": "2026-07-01" },
+  { "id": 5, "name": "Vikram Singh", "rating": 5, "service": "AC Service", "review": "AC is cooling like new. The technician was knowledgeable and friendly.", "date": "2026-07-05" }
+]

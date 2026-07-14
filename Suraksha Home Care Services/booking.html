@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Book a Service - Suraksha Home Services | Home Cleaning & Maintenance</title>
+<meta name="description" content="Book premium home cleaning, deep cleaning, kitchen cleaning, bathroom cleaning, sofa cleaning, pest control, and more services online. Verified professionals, eco-friendly products, 100% satisfaction guaranteed.">
+<meta name="keywords" content="book home cleaning, schedule cleaning service, book deep cleaning online, home service booking, Suraksha booking">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Suraksha Home Services">
+<meta property="og:title" content="Book a Service - Suraksha Home Services">
+<meta property="og:description" content="Book premium home cleaning and maintenance services online. Quick, easy, and secure booking with instant confirmation.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://surakshahomeservices.in/booking.html">
+<meta property="og:image" content="https://surakshahomeservices.in/assets/images/og-image.jpg">
+<meta property="og:site_name" content="Suraksha Home Services">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Book a Service - Suraksha Home Services">
+<meta name="twitter:description" content="Book premium home cleaning and maintenance services online.">
+<link rel="canonical" href="https://surakshahomeservices.in/booking.html">
+<link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css">
+<style>
+:root{--booking-primary:#1a5276;--booking-accent:#2ecc71;--step-size:40px;--step-line:3px}.booking-page{background:var(--gray-50);min-height:calc(100vh - var(--header-height));padding:40px 0 80px}.booking-layout{display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:start}.booking-main{background:var(--white);border-radius:var(--radius-xl);box-shadow:var(--shadow-md);padding:50px;border:1px solid var(--border-color);position:relative}.step-indicator{display:flex;align-items:center;justify-content:center;margin-bottom:40px;gap:0;position:relative;padding:0 20px}.step-indicator::before{content:'';position:absolute;top:calc(var(--step-size)/2);left:calc(var(--step-size)/2 + 20px);right:calc(var(--step-size)/2 + 20px);height:var(--step-line);background:var(--gray-200);z-index:0;border-radius:2px}.step-indicator .step-progress{position:absolute;top:calc(var(--step-size)/2);left:calc(var(--step-size)/2 + 20px);height:var(--step-line);background:var(--booking-primary);z-index:1;border-radius:2px;transition:width 0.5s ease;width:0%}.step-item{display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;z-index:2;flex:1}.step-circle{width:var(--step-size);height:var(--step-size);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:700;border:var(--step-line) solid var(--gray-300);background:var(--white);color:var(--gray-500);transition:var(--transition-base)}.step-circle.active{border-color:var(--booking-primary);background:var(--booking-primary);color:var(--white)}.step-circle.completed{border-color:var(--booking-accent);background:var(--booking-accent);color:var(--white)}.step-circle.completed i{font-size:0.85rem}.step-label{font-size:0.8rem;font-weight:500;color:var(--gray-500);text-align:center;transition:var(--transition-base)}.step-label.active{color:var(--booking-primary);font-weight:600}.step-label.completed{color:var(--booking-accent)}.step-content{display:none;animation:fadeInUp 0.4s ease}.step-content.active{display:block}.booking-step-title{font-size:1.5rem;font-weight:700;color:var(--text-primary);margin-bottom:8px}.booking-step-desc{font-size:0.95rem;color:var(--text-secondary);margin-bottom:30px}.service-select-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.service-select-card{cursor:pointer;border:2px solid var(--gray-200);border-radius:var(--radius-lg);padding:20px;text-align:center;transition:var(--transition-base);position:relative}.service-select-card:hover{border-color:var(--booking-primary);box-shadow:var(--shadow-md);transform:translateY(-2px)}.service-select-card.selected{border-color:var(--booking-primary);background:rgba(26,82,118,0.04);box-shadow:0 0 0 4px rgba(26,82,118,0.1)}.service-select-card .srv-icon{width:56px;height:56px;margin:0 auto 12px;background:rgba(26,82,118,0.08);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--booking-primary);transition:var(--transition-base)}.service-select-card.selected .srv-icon{background:var(--booking-primary);color:var(--white)}.service-select-card .srv-name{font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:4px}.service-select-card .srv-price{font-size:0.85rem;color:var(--booking-primary);font-weight:600}.service-select-card .srv-radio{position:absolute;top:12px;right:12px;width:20px;height:20px;border-radius:50%;border:2px solid var(--gray-300);display:flex;align-items:center;justify-content:center;transition:var(--transition-base)}.service-select-card.selected .srv-radio{border-color:var(--booking-primary)}.service-select-card.selected .srv-radio::after{content:'';width:10px;height:10px;border-radius:50%;background:var(--booking-primary)}.package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.package-card{cursor:pointer;border:2px solid var(--gray-200);border-radius:var(--radius-xl);padding:30px 24px;text-align:center;transition:var(--transition-base);position:relative;overflow:hidden}.package-card:hover{border-color:var(--gray-400);transform:translateY(-4px);box-shadow:var(--shadow-md)}.package-card.selected{border-color:var(--booking-primary);box-shadow:0 0 0 4px rgba(26,82,118,0.1)}.package-card.featured{border-color:var(--booking-accent)}.package-card.featured.selected{border-color:var(--booking-primary)}.package-badge{position:absolute;top:16px;right:-32px;background:var(--booking-accent);color:var(--white);padding:4px 36px;font-size:0.75rem;font-weight:700;transform:rotate(45deg);text-transform:uppercase;letter-spacing:0.5px}.package-card h4{font-size:1.2rem;margin-bottom:4px}.package-card .pkg-sub{font-size:0.85rem;color:var(--text-secondary);margin-bottom:16px}.package-price{font-size:2rem;font-weight:800;color:var(--booking-primary);margin-bottom:6px;line-height:1}.package-price span{font-size:1rem;font-weight:400;color:var(--text-light)}.package-desc{font-size:0.85rem;color:var(--text-secondary);margin-bottom:20px;line-height:1.5}.package-features{text-align:left;margin-bottom:20px}.package-features li{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:0.88rem;color:var(--text-secondary);border-bottom:1px solid var(--gray-100)}.package-features li:last-child{border-bottom:none}.package-features li i{color:var(--booking-accent);font-size:0.85rem;flex-shrink:0}.package-card .btn{width:100%;font-size:0.9rem;padding:12px 20px}.details-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}.phone-input-wrap{display:flex;gap:10px}.phone-input-wrap .country-code{width:80px;flex-shrink:0;background:var(--gray-50);border:2px solid var(--gray-200);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:0.95rem;font-weight:600;color:var(--text-primary);padding:0 10px}.phone-input-wrap .country-code i{color:var(--booking-accent);font-size:1.1rem;margin-right:4px}.phone-input-wrap .form-control{flex:1}.schedule-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.time-slots{display:flex;flex-direction:column;gap:10px}.time-slot{cursor:pointer;border:2px solid var(--gray-200);border-radius:var(--radius-md);padding:14px 18px;display:flex;align-items:center;gap:14px;transition:var(--transition-base)}.time-slot:hover{border-color:var(--booking-primary)}.time-slot.selected{border-color:var(--booking-primary);background:rgba(26,82,118,0.04);box-shadow:0 0 0 3px rgba(26,82,118,0.1)}.time-slot .ts-icon{width:40px;height:40px;border-radius:var(--radius-md);background:rgba(26,82,118,0.08);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--booking-primary);flex-shrink:0}.time-slot.selected .ts-icon{background:var(--booking-primary);color:var(--white)}.time-slot .ts-info{flex:1}.time-slot .ts-label{font-size:0.95rem;font-weight:600;color:var(--text-primary)}.time-slot .ts-time{font-size:0.82rem;color:var(--text-secondary)}.time-slot .ts-radio{width:20px;height:20px;border-radius:50%;border:2px solid var(--gray-300);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:var(--transition-base)}.time-slot.selected .ts-radio{border-color:var(--booking-primary)}.time-slot.selected .ts-radio::after{content:'';width:10px;height:10px;border-radius:50%;background:var(--booking-primary)}.step-actions{display:flex;align-items:center;justify-content:space-between;margin-top:40px;padding-top:30px;border-top:1px solid var(--border-color)}.step-actions .btn{padding:14px 32px;font-size:0.95rem}.btn-prev{background:var(--gray-100);color:var(--text-primary);border:2px solid var(--gray-200)}.btn-prev:hover{background:var(--gray-200);border-color:var(--gray-300);transform:none}.btn-prev:disabled{opacity:0.4;cursor:not-allowed}.btn-next{min-width:140px}.booking-summary-card{background:var(--white);border-radius:var(--radius-xl);box-shadow:var(--shadow-md);border:1px solid var(--border-color);padding:30px;position:sticky;top:calc(var(--header-height) + 40px)}.summary-card-title{font-size:1.15rem;font-weight:700;margin-bottom:20px;padding-bottom:15px;border-bottom:2px solid var(--gray-100);display:flex;align-items:center;gap:10px}.summary-card-title i{color:var(--booking-primary)}.summary-empty{padding:30px 20px;text-align:center;color:var(--text-secondary);font-size:0.9rem;background:var(--gray-50);border-radius:var(--radius-lg)}.summary-empty i{font-size:2rem;color:var(--gray-300);display:block;margin-bottom:12px}.summary-item{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid var(--gray-100)}.summary-item:last-child{padding-bottom:0;border-bottom:none}.summary-item-icon{width:36px;height:36px;border-radius:var(--radius-md);background:rgba(26,82,118,0.08);display:flex;align-items:center;justify-content:center;font-size:0.9rem;color:var(--booking-primary);flex-shrink:0}.summary-item-content{flex:1;min-width:0}.summary-item-label{font-size:0.8rem;color:var(--text-secondary);margin-bottom:2px;text-transform:uppercase;letter-spacing:0.3px;font-weight:500}.summary-item-value{font-size:0.95rem;font-weight:600;color:var(--text-primary);word-break:break-word}.summary-total{margin-top:16px;padding-top:16px;border-top:2px solid var(--border-color);display:flex;justify-content:space-between;align-items:center}.summary-total .total-label{font-size:1rem;font-weight:600;color:var(--text-primary)}.summary-total .total-price{font-size:1.5rem;font-weight:800;color:var(--booking-primary)}.booking-success{display:none;text-align:center;padding:60px 40px;animation:fadeInUp 0.5s ease}.booking-success.show{display:block}.booking-success .success-icon{width:80px;height:80px;border-radius:50%;background:rgba(46,204,113,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:2.5rem;color:var(--booking-accent)}.booking-success h2{font-size:1.8rem;margin-bottom:8px}.booking-success p{font-size:1rem;color:var(--text-secondary);margin-bottom:6px}.booking-success .booking-id{font-size:1.1rem;font-weight:700;color:var(--booking-primary);background:var(--gray-50);display:inline-block;padding:12px 28px;border-radius:var(--radius-md);border:1px dashed var(--booking-primary);margin:16px 0 24px;letter-spacing:1px}.booking-success .next-steps{text-align:left;max-width:450px;margin:0 auto 30px;background:var(--gray-50);padding:24px 28px;border-radius:var(--radius-lg)}.booking-success .next-steps h4{font-size:1rem;margin-bottom:12px;display:flex;align-items:center;gap:8px}.booking-success .next-steps h4 i{color:var(--booking-accent)}.booking-success .next-steps li{display:flex;align-items:flex-start;gap:10px;padding:6px 0;font-size:0.9rem;color:var(--text-secondary)}.booking-success .next-steps li i{color:var(--booking-accent);margin-top:4px;flex-shrink:0}.booking-success .next-steps li span{flex:1}.service-skeleton{display:flex;flex-direction:column;align-items:center;gap:12px;padding:20px;border:1px solid var(--border-color);border-radius:var(--radius-lg)}.skeleton-icon-box{width:56px;height:56px;border-radius:var(--radius-lg);background:linear-gradient(90deg,var(--gray-200) 25%,var(--gray-100) 50%,var(--gray-200) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite}.skeleton-text-line{height:14px;border-radius:4px;background:linear-gradient(90deg,var(--gray-200) 25%,var(--gray-100) 50%,var(--gray-200) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite}.skeleton-text-line:nth-child(2){width:70%}.skeleton-text-line:nth-child(3){width:40%}@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}.progress-percent{text-align:center;font-size:0.85rem;font-weight:600;color:var(--booking-primary);margin-bottom:8px}.form-error-msg{font-size:0.82rem;color:#e74c3c;margin-top:4px;display:none}.form-control.error{border-color:#e74c3c;box-shadow:0 0 0 4px rgba(231,76,60,0.1)}.form-control.error+.form-error-msg{display:block}.sticky-header-fix{scroll-margin-top:calc(var(--header-height) + 20px)}@media(max-width:1199px){.booking-layout{grid-template-columns:1fr}.booking-main{padding:35px}.booking-summary-card{position:static;margin-top:30px}.package-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:1023px){.booking-page{padding:30px 0 60px}.booking-main{padding:30px 24px}.step-indicator{padding:0 10px}.step-label{font-size:0.7rem}.service-select-grid{grid-template-columns:1fr 1fr}.package-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}.schedule-grid{grid-template-columns:1fr}.details-form .form-row{grid-template-columns:1fr}}@media(max-width:767px){.booking-page{padding:20px 0 40px}.booking-main{padding:20px 16px;border-radius:var(--radius-lg)}.step-indicator{gap:0;padding:0 5px}.step-circle{width:32px;height:32px;font-size:0.75rem;border-width:2px}.step-label{display:none}.step-indicator::before{top:16px;left:calc(16px + 10px);right:calc(16px + 10px)}.step-indicator .step-progress{top:16px;left:calc(16px + 10px)}.booking-step-title{font-size:1.25rem}.service-select-grid{grid-template-columns:1fr}.step-actions{flex-direction:column;gap:12px}.step-actions .btn{width:100%}.package-card{padding:24px 18px}.schedule-grid{grid-template-columns:1fr}.booking-success{padding:30px 20px}.booking-success .booking-id{font-size:0.95rem;padding:10px 20px}.summary-card-title{font-size:1rem}}
+</style>
+</head>
+<body>
+
+<div class="page-loader" id="pageLoader"><div class="loader-spinner"></div><p class="loader-text">Loading Suraksha...</p></div>
+
+<div class="mobile-menu-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" id="closeMenu"><i class="fas fa-times"></i></button>
+  <a href="index.html" class="mobile-nav-link">Home</a>
+  <a href="services.html" class="mobile-nav-link">Services</a>
+  <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+  <a href="booking.html" class="mobile-nav-link active">Book Now</a>
+  <a href="about.html" class="mobile-nav-link">About</a>
+  <a href="blog.html" class="mobile-nav-link">Blog</a>
+  <a href="contact.html" class="mobile-nav-link">Contact</a>
+  <a href="tel:+919999999999" class="btn btn-phone btn-block"><i class="fas fa-phone-alt"></i> Call Now</a>
+  <a href="https://wa.me/919999999999" class="btn btn-whatsapp btn-block" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  <a href="booking.html" class="btn btn-primary btn-block"><i class="fas fa-calendar-check"></i> Book Now</a>
+</div>
+
+<header class="header" id="header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <div class="logo-icon"><i class="fas fa-shield-alt"></i></div>
+      Suraksha <span class="logo-text"><span>Home Services</span></span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="services.html"><i class="fas fa-broom"></i> Services</a></li>
+      <li><a href="pricing.html"><i class="fas fa-rupee-sign"></i> Pricing</a></li>
+      <li><a href="booking.html" class="active"><i class="fas fa-calendar-check"></i> Book Now</a></li>
+      <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="tel:+919999999999" class="nav-phone"><i class="fas fa-phone-alt"></i> +91-9999999999</a>
+      <a href="booking.html" class="btn btn-primary btn-sm"><i class="fas fa-calendar-check"></i> Book Now</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="page-header booking-hero">
+  <div class="container">
+    <h1>Book Your <span style="color:var(--secondary)">Service</span></h1>
+    <div class="page-breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="separator">|</span>
+      <span>Book a Service</span>
+    </div>
+  </div>
+</section>
+
+<section class="booking-page" id="bookingPage">
+  <div class="container">
+    <div class="booking-layout">
+      <div class="booking-main" id="bookingMain">
+
+        <div class="step-indicator" id="stepIndicator">
+          <div class="step-progress" id="stepProgress"></div>
+          <div class="step-item" data-step="1">
+            <div class="step-circle active" id="sc1">1</div>
+            <div class="step-label active" id="sl1">Service</div>
+          </div>
+          <div class="step-item" data-step="2">
+            <div class="step-circle" id="sc2">2</div>
+            <div class="step-label" id="sl2">Package</div>
+          </div>
+          <div class="step-item" data-step="3">
+            <div class="step-circle" id="sc3">3</div>
+            <div class="step-label" id="sl3">Details</div>
+          </div>
+          <div class="step-item" data-step="4">
+            <div class="step-circle" id="sc4">4</div>
+            <div class="step-label" id="sl4">Confirm</div>
+          </div>
+        </div>
+
+        <div class="progress-percent" id="progressPercent">25% Complete</div>
+
+        <div id="step1" class="step-content active">
+          <h2 class="booking-step-title">Select a Service</h2>
+          <p class="booking-step-desc">Choose the service you need from our wide range of professional home care solutions.</p>
+          <div class="service-select-grid" id="serviceGrid">
+            <div class="service-skeleton"><div class="skeleton-icon-box"></div><div class="skeleton-text-line"></div><div class="skeleton-text-line"></div></div>
+            <div class="service-skeleton"><div class="skeleton-icon-box"></div><div class="skeleton-text-line"></div><div class="skeleton-text-line"></div></div>
+            <div class="service-skeleton"><div class="skeleton-icon-box"></div><div class="skeleton-text-line"></div><div class="skeleton-text-line"></div></div>
+            <div class="service-skeleton"><div class="skeleton-icon-box"></div><div class="skeleton-text-line"></div><div class="skeleton-text-line"></div></div>
+          </div>
+        </div>
+
+        <div id="step2" class="step-content">
+          <h2 class="booking-step-title">Choose a Package</h2>
+          <p class="booking-step-desc">Select the package that best fits your needs. Upgrade anytime for more coverage.</p>
+          <div class="package-grid" id="packageGrid"></div>
+        </div>
+
+        <div id="step3" class="step-content">
+          <h2 class="booking-step-title">Your Details</h2>
+          <p class="booking-step-desc">Fill in your contact information so we can reach you and send the service team.</p>
+          <form class="details-form" id="detailsForm" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="custName">Full Name <span class="required">*</span></label>
+              <input class="form-control" type="text" id="custName" name="name" placeholder="Enter your full name" required>
+              <div class="form-error-msg" id="nameError">Please enter your full name</div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="custPhone">Phone Number <span class="required">*</span></label>
+                <div class="phone-input-wrap">
+                  <div class="country-code"><i class="fas fa-phone-alt"></i> +91</div>
+                  <input class="form-control" type="tel" id="custPhone" name="phone" placeholder="9876543210" required pattern="[0-9]{10}">
+                </div>
+                <div class="form-error-msg" id="phoneError">Please enter a valid 10-digit phone number</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="custEmail">Email Address</label>
+                <input class="form-control" type="email" id="custEmail" name="email" placeholder="your@email.com">
+                <div class="form-error-msg" id="emailError">Please enter a valid email address</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="custAddress">Service Address <span class="required">*</span></label>
+              <input class="form-control" type="text" id="custAddress" name="address" placeholder="House/Flat No., Building, Street" required>
+              <div class="form-error-msg" id="addressError">Please enter your service address</div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="custCity">City <span class="required">*</span></label>
+                <input class="form-control" type="text" id="custCity" name="city" placeholder="e.g. Mumbai" required>
+                <div class="form-error-msg" id="cityError">Please enter your city</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="custPincode">Pincode <span class="required">*</span></label>
+                <input class="form-control" type="text" id="custPincode" name="pincode" placeholder="400001" required pattern="[0-9]{6}">
+                <div class="form-error-msg" id="pincodeError">Please enter a valid 6-digit pincode</div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div id="step4" class="step-content">
+          <h2 class="booking-step-title">Schedule & Confirm</h2>
+          <p class="booking-step-desc">Pick a date and time slot, add any special instructions, and confirm your booking.</p>
+          <form id="scheduleForm" novalidate>
+            <div class="schedule-grid">
+              <div class="form-group">
+                <label class="form-label" for="bookingDate">Preferred Date <span class="required">*</span></label>
+                <input class="form-control" type="date" id="bookingDate" name="date" required>
+                <div class="form-error-msg" id="dateError">Please select a valid date (must be today or later)</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Preferred Time Slot <span class="required">*</span></label>
+                <div class="time-slots" id="timeSlots">
+                  <div class="time-slot" data-slot="morning">
+                    <div class="ts-icon"><i class="fas fa-sun"></i></div>
+                    <div class="ts-info">
+                      <div class="ts-label">Morning</div>
+                      <div class="ts-time">8:00 AM - 12:00 PM</div>
+                    </div>
+                    <div class="ts-radio"></div>
+                  </div>
+                  <div class="time-slot" data-slot="afternoon">
+                    <div class="ts-icon"><i class="fas fa-cloud-sun"></i></div>
+                    <div class="ts-info">
+                      <div class="ts-label">Afternoon</div>
+                      <div class="ts-time">12:00 PM - 4:00 PM</div>
+                    </div>
+                    <div class="ts-radio"></div>
+                  </div>
+                  <div class="time-slot" data-slot="evening">
+                    <div class="ts-icon"><i class="fas fa-moon"></i></div>
+                    <div class="ts-info">
+                      <div class="ts-label">Evening</div>
+                      <div class="ts-time">4:00 PM - 8:00 PM</div>
+                    </div>
+                    <div class="ts-radio"></div>
+                  </div>
+                </div>
+                <div class="form-error-msg" id="slotError">Please select a time slot</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="specialInstructions">Special Instructions</label>
+              <textarea class="form-control" id="specialInstructions" name="instructions" placeholder="Any special requests? e.g., door code, pet information, specific areas to focus on..."></textarea>
+            </div>
+          </form>
+          <div class="booking-summary" id="confirmSummary" style="margin-top:20px">
+            <h4>Booking Summary</h4>
+            <div class="booking-summary-item"><span class="label">Service</span><span class="value" id="confirmService">-</span></div>
+            <div class="booking-summary-item"><span class="label">Package</span><span class="value" id="confirmPackage">-</span></div>
+            <div class="booking-summary-item"><span class="label">Date</span><span class="value" id="confirmDate">-</span></div>
+            <div class="booking-summary-item"><span class="label">Time</span><span class="value" id="confirmTime">-</span></div>
+            <div class="booking-summary-total"><span>Total</span><span id="confirmTotal">-</span></div>
+          </div>
+        </div>
+
+        <div class="booking-success" id="bookingSuccess">
+          <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+          <h2>Booking Confirmed!</h2>
+          <p>Thank you for choosing Suraksha Home Services.</p>
+          <div class="booking-id" id="bookingId">#SUR2026-XXXXX</div>
+          <p style="margin-bottom:20px">A confirmation message has been sent to your phone & email.</p>
+          <div class="next-steps">
+            <h4><i class="fas fa-list-check"></i> What happens next?</h4>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> <span>Our team will call you 30 minutes before arrival</span></li>
+              <li><i class="fas fa-check-circle"></i> <span>Verified professionals arrive with all equipment & eco-friendly products</span></li>
+              <li><i class="fas fa-check-circle"></i> <span>Service performed as per selected package</span></li>
+              <li><i class="fas fa-check-circle"></i> <span>Quality check & payment on completion</span></li>
+            </ul>
+          </div>
+          <a href="booking.html" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> Book Another Service</a>
+          <br><br>
+          <a href="index.html" class="btn btn-outline-primary"><i class="fas fa-home"></i> Back to Home</a>
+        </div>
+
+        <div class="step-actions" id="stepActions">
+          <button class="btn btn-prev" id="prevBtn" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+          <div style="display:flex;gap:12px">
+            <button class="btn btn-primary btn-next" id="nextBtn">Next <i class="fas fa-arrow-right"></i></button>
+            <button class="btn btn-secondary btn-next" id="confirmBtn" style="display:none"><i class="fas fa-check-circle"></i> Confirm Booking</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="booking-summary-card" id="summaryCard">
+        <div class="summary-card-title"><i class="fas fa-receipt"></i> Booking Summary</div>
+        <div id="summaryContent">
+          <div class="summary-empty" id="summaryEmpty">
+            <i class="fas fa-calendar-plus"></i>
+            Select a service to get started
+          </div>
+          <div id="summaryDetails" style="display:none">
+            <div class="summary-item">
+              <div class="summary-item-icon"><i class="fas fa-broom"></i></div>
+              <div class="summary-item-content">
+                <div class="summary-item-label">Service</div>
+                <div class="summary-item-value" id="sumService">-</div>
+              </div>
+            </div>
+            <div class="summary-item">
+              <div class="summary-item-icon"><i class="fas fa-box"></i></div>
+              <div class="summary-item-content">
+                <div class="summary-item-label">Package</div>
+                <div class="summary-item-value" id="sumPackage">-</div>
+              </div>
+            </div>
+            <div class="summary-item">
+              <div class="summary-item-icon"><i class="fas fa-user"></i></div>
+              <div class="summary-item-content">
+                <div class="summary-item-label">Name</div>
+                <div class="summary-item-value" id="sumName">-</div>
+              </div>
+            </div>
+            <div class="summary-item">
+              <div class="summary-item-icon"><i class="fas fa-calendar-day"></i></div>
+              <div class="summary-item-content">
+                <div class="summary-item-label">Date</div>
+                <div class="summary-item-value" id="sumDate">-</div>
+              </div>
+            </div>
+            <div class="summary-item">
+              <div class="summary-item-icon"><i class="fas fa-clock"></i></div>
+              <div class="summary-item-content">
+                <div class="summary-item-label">Time</div>
+                <div class="summary-item-value" id="sumTime">-</div>
+              </div>
+            </div>
+            <div class="summary-item">
+              <div class="summary-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="summary-item-content">
+                <div class="summary-item-label">Address</div>
+                <div class="summary-item-value" id="sumAddress">-</div>
+              </div>
+            </div>
+            <div class="summary-total">
+              <div class="total-label">Total Amount</div>
+              <div class="total-price" id="sumTotal">-</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-grid">
+        <div class="footer-col footer-about">
+          <a href="index.html" class="logo" style="color:var(--white);margin-bottom:20px;display:flex;">
+            <div class="logo-icon"><i class="fas fa-shield-alt"></i></div> Suraksha
+          </a>
+          <p>Suraksha Home Services is India's fastest-growing home cleaning and maintenance company. With over 15,000 happy customers across 25+ cities, we're on a mission to make every Indian home sparkle.</p>
+          <div class="footer-social">
+            <a href="https://facebook.com/surakshahomeservices" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/surakshahomeservices" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/surakshahome" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com/@surakshahomeservices" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://linkedin.com/company/surakshahomeservices" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Deep Cleaning</a></li>
+            <li><a href="services.html">Kitchen Cleaning</a></li>
+            <li><a href="services.html">Bathroom Cleaning</a></li>
+            <li><a href="services.html">Sofa Cleaning</a></li>
+            <li><a href="services.html">Pest Control</a></li>
+            <li><a href="services.html">AC Servicing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Information</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i> B-701, Business Avenue, Andheri East, <strong>Mumbai — 400093</strong>, Maharashtra, India</li>
+            <li><i class="fas fa-phone-alt"></i> <strong><a href="tel:+919999999999" style="color:rgba(255,255,255,0.9)">+91-9999999999</a></strong></li>
+            <li><i class="fab fa-whatsapp"></i> <strong><a href="https://wa.me/919999999999" style="color:rgba(255,255,255,0.9)" target="_blank" rel="noopener">WhatsApp: +91-9999999999</a></strong></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:hello@surakshahomeservices.in" style="color:rgba(255,255,255,0.9)">hello@surakshahomeservices.in</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Suraksha Home Services. All rights reserved. | <a href="index.html">Privacy Policy</a> | <a href="index.html">Terms of Service</a></p>
+      <div class="footer-bottom-links">
+        <a href="index.html">Privacy Policy</a>
+        <a href="index.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="whatsapp-float">
+  <a href="https://wa.me/919999999999" target="_blank" rel="noopener" class="whatsapp-float-btn" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+(function(){var loader=document.getElementById('pageLoader');window.addEventListener('load',function(){setTimeout(function(){loader.classList.add('hidden')},600)})})();
+(function(){var header=document.getElementById('header');window.addEventListener('scroll',function(){if(window.scrollY>80){header.classList.add('scrolled')}else{header.classList.remove('scrolled')}},{passive:true})})();
+(function(){var hamburger=document.getElementById('hamburger'),mobileMenu=document.getElementById('mobileMenu'),overlay=document.getElementById('mobileOverlay'),closeBtn=document.getElementById('closeMenu');function openMenu(){mobileMenu.classList.add('open');overlay.classList.add('active');document.body.style.overflow='hidden'}function closeMenuFunc(){mobileMenu.classList.remove('open');overlay.classList.remove('active');document.body.style.overflow=''}hamburger.addEventListener('click',openMenu);closeBtn.addEventListener('click',closeMenuFunc);overlay.addEventListener('click',closeMenuFunc);document.querySelectorAll('.mobile-nav-link').forEach(function(link){link.addEventListener('click',closeMenuFunc)})})();
+(function(){var backBtn=document.getElementById('backToTop');window.addEventListener('scroll',function(){if(window.scrollY>400){backBtn.classList.add('visible')}else{backBtn.classList.remove('visible')}},{passive:true});backBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
+
+(function(){
+var currentStep=1,totalSteps=4,services=[],selectedService=null,selectedPackage=null,selectedSlot=null;
+
+var stepEls=[],circleEls=[],labelEls=[];
+for(var i=1;i<=totalSteps;i++){stepEls.push(document.getElementById('step'+i));circleEls.push(document.getElementById('sc'+i));labelEls.push(document.getElementById('sl'+i))}
+var prevBtn=document.getElementById('prevBtn'),nextBtn=document.getElementById('nextBtn'),confirmBtn=document.getElementById('confirmBtn'),progressBar=document.getElementById('stepProgress'),progressPercent=document.getElementById('progressPercent'),serviceGrid=document.getElementById('serviceGrid'),packageGrid=document.getElementById('packageGrid'),summaryEmpty=document.getElementById('summaryEmpty'),summaryDetails=document.getElementById('summaryDetails'),sumService=document.getElementById('sumService'),sumPackage=document.getElementById('sumPackage'),sumName=document.getElementById('sumName'),sumDate=document.getElementById('sumDate'),sumTime=document.getElementById('sumTime'),sumAddress=document.getElementById('sumAddress'),sumTotal=document.getElementById('sumTotal'),confirmService=document.getElementById('confirmService'),confirmPackage=document.getElementById('confirmPackage'),confirmDate=document.getElementById('confirmDate'),confirmTime=document.getElementById('confirmTime'),confirmTotal=document.getElementById('confirmTotal'),bookingSuccess=document.getElementById('bookingSuccess'),bookingMain=document.getElementById('bookingMain'),bookingId=document.getElementById('bookingId');
+
+function updateStepUI(){
+  stepEls.forEach(function(el,i){el.classList.toggle('active',i+1===currentStep)});
+  circleEls.forEach(function(el,i){var s=i+1;el.classList.toggle('active',s===currentStep);el.classList.toggle('completed',s<currentStep);if(s<currentStep){el.innerHTML='<i class="fas fa-check"></i>'}else{el.textContent=s}});
+  labelEls.forEach(function(el,i){var s=i+1;el.classList.toggle('active',s===currentStep);el.classList.toggle('completed',s<currentStep)});
+  var pct=Math.round((currentStep-1)/(totalSteps-1)*100);
+  progressBar.style.width=pct+'%';
+  progressPercent.textContent=pct+'% Complete';
+  prevBtn.disabled=currentStep===1;
+  if(currentStep===totalSteps){nextBtn.style.display='none';confirmBtn.style.display='inline-flex'}else{nextBtn.style.display='inline-flex';confirmBtn.style.display='none'}
+}
+
+function updateSummary(){
+  var hasService=selectedService!==null,hasPackage=selectedPackage!==null,name=document.getElementById('custName').value,address=document.getElementById('custAddress').value,date=document.getElementById('bookingDate').value,slotText='';
+  if(selectedSlot==='morning')slotText='Morning (8AM-12PM)';
+  else if(selectedSlot==='afternoon')slotText='Afternoon (12PM-4PM)';
+  else if(selectedSlot==='evening')slotText='Evening (4PM-8PM)';
+  if(hasService||hasPackage||name||address||date||slotText){
+    summaryEmpty.style.display='none';summaryDetails.style.display='block';
+    sumService.textContent=selectedService?selectedService.name:'-';
+    sumPackage.textContent=selectedPackage?selectedPackage.name+(!selectedPackage.popular?'':' - Most Popular'):'-';
+    sumName.textContent=name||'-';
+    sumDate.textContent=date?new Date(date).toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'}):'-';
+    sumTime.textContent=slotText||'-';
+    sumAddress.textContent=address||'-';
+    var price=selectedPackage?selectedPackage.price:'-';
+    sumTotal.textContent=price;
+  }else{
+    summaryEmpty.style.display='block';summaryDetails.style.display='none'
+  }
+}
+
+function updateConfirmSummary(){
+  confirmService.textContent=selectedService?selectedService.name:'-';
+  confirmPackage.textContent=selectedPackage?selectedPackage.name:'-';
+  var d=document.getElementById('bookingDate').value;
+  confirmDate.textContent=d?new Date(d).toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'}):'-';
+  if(selectedSlot==='morning')confirmTime.textContent='Morning (8AM-12PM)';
+  else if(selectedSlot==='afternoon')confirmTime.textContent='Afternoon (12PM-4PM)';
+  else if(selectedSlot==='evening')confirmTime.textContent='Evening (4PM-8PM)';
+  else confirmTime.textContent='-';
+  confirmTotal.textContent=selectedPackage?selectedPackage.price:'-';
+}
+
+function loadServices(){
+  if(typeof $.ajax!=='undefined'){
+    $.ajax({url:'/api/services',method:'GET',dataType:'json',success:function(data){if(data&&data.length){renderServices(data)}else{loadFallbackServices()}},error:function(){loadFallbackServices()}})
+  }else{loadFallbackServices()}
+}
+
+function loadFallbackServices(){
+  var fallback=[{id:"deep-cleaning",name:"Deep Cleaning",icon:"fas fa-broom",price:"₹2,999"},{id:"kitchen-cleaning",name:"Kitchen Cleaning",icon:"fas fa-utensils",price:"₹1,499"},{id:"bathroom-cleaning",name:"Bathroom Cleaning",icon:"fas fa-shower",price:"₹799"},{id:"sofa-cleaning",name:"Sofa Cleaning",icon:"fas fa-couch",price:"₹699"},{id:"pest-control",name:"Pest Control",icon:"fas fa-spider",price:"₹999"},{id:"ac-cleaning",name:"AC Servicing",icon:"fas fa-snowflake",price:"₹449"},{id:"carpet-cleaning",name:"Carpet Cleaning",icon:"fas fa-rug",price:"₹499"},{id:"mattress-cleaning",name:"Mattress Cleaning",icon:"fas fa-bed",price:"₹599"},{id:"office-cleaning",name:"Office Cleaning",icon:"fas fa-building",price:"₹1,999"},{id:"water-tank-cleaning",name:"Tank Cleaning",icon:"fas fa-water",price:"₹999"},{id:"housekeeping",name:"Housekeeping",icon:"fas fa-hand-sparkles",price:"₹4,999/mo"},{id:"electrician",name:"Electrician",icon:"fas fa-bolt",price:"₹199"}];
+  renderServices(fallback);
+}
+
+function renderServices(data){
+  services=data;
+  serviceGrid.innerHTML='';
+  data.forEach(function(s,i){
+    var card=document.createElement('div');
+    card.className='service-select-card'+(i===0?' selected':'');
+    if(i===0){selectedService=s}
+    card.setAttribute('data-index',i);
+    card.innerHTML='<div class="srv-radio"></div><div class="srv-icon"><i class="'+s.icon+'"></i></div><div class="srv-name">'+s.name+'</div><div class="srv-price">Starting '+(s.packages&&s.packages.length?s.packages[0].price:('price'in s?s.price:'₹499'))+'</div>';
+    card.addEventListener('click',function(){
+      var idx=parseInt(this.getAttribute('data-index'));
+      document.querySelectorAll('.service-select-card').forEach(function(c){c.classList.remove('selected')});
+      this.classList.add('selected');
+      selectedService=services[idx];
+      selectedPackage=null;
+      updateSummary();
+    });
+    serviceGrid.appendChild(card)
+  })
+}
+
+function renderPackages(serviceId){
+  var svc=null;
+  for(var i=0;i<services.length;i++){if(services[i].id===serviceId||services[i].name===serviceId){svc=services[i];break}}
+  if(!svc){svc=selectedService}
+  if(!svc||!svc.packages){packageGrid.innerHTML='<p style="text-align:center;color:var(--text-secondary);grid-column:1/-1">No packages available for this service.</p>';return}
+  var pkgs=svc.packages;
+  packageGrid.innerHTML='';
+  var standardIdx=-1;
+  for(var i=0;i<pkgs.length;i++){if(pkgs[i].popular||pkgs[i].name==='Standard'){standardIdx=i;break}}
+  pkgs.forEach(function(p,i){
+    var card=document.createElement('div');
+    card.className='package-card'+(p.popular?' featured':'')+(i===standardIdx?' selected':'');
+    if(i===standardIdx){selectedPackage=p}
+    card.innerHTML=''+(p.popular?'<div class="package-badge">Most Popular</div>':'')+'<h4>'+p.name+'</h4><div class="pkg-sub">'+(p.details||'')+'</div><div class="package-price">'+p.price+'</div><div class="package-desc">'+(p.details||'Professional '+svc.name+' service')+'</div><ul class="package-features"><li><i class="fas fa-check"></i> Verified professionals</li><li><i class="fas fa-check"></i> Eco-friendly products</li><li><i class="fas fa-check"></i> Satisfaction guaranteed</li><li><i class="fas fa-check"></i> Free re-clean if unhappy</li></ul><button class="btn '+(p.popular?'btn-primary':'btn-outline-primary')+'">Select '+p.name+'</button>';
+    card.querySelector('.btn').addEventListener('click',function(e){e.stopPropagation();selectPackage(card,i)});
+    card.addEventListener('click',function(){selectPackage(card,i)});
+    packageGrid.appendChild(card)
+  })
+}
+
+function selectPackage(card,idx){
+  document.querySelectorAll('.package-card').forEach(function(c){c.classList.remove('selected')});
+  card.classList.add('selected');
+  var svc=selectedService;
+  if(svc&&svc.packages){selectedPackage=svc.packages[idx]}
+  updateSummary();
+}
+
+function validateStep(step){
+  if(step===1){
+    if(!selectedService){alert('Please select a service.');return false}
+    return true
+  }
+  if(step===2){
+    if(!selectedPackage){alert('Please select a package.');return false}
+    return true
+  }
+  if(step===3){
+    var valid=true;
+    var fields={name:document.getElementById('custName'),phone:document.getElementById('custPhone'),email:document.getElementById('custEmail'),address:document.getElementById('custAddress'),city:document.getElementById('custCity'),pincode:document.getElementById('custPincode')};
+    Object.keys(fields).forEach(function(k){fields[k].classList.remove('error')});
+    if(!fields.name.value.trim()){fields.name.classList.add('error');valid=false}
+    var phoneVal=fields.phone.value.trim();
+    if(!phoneVal||!/^[0-9]{10}$/.test(phoneVal)){fields.phone.classList.add('error');valid=false}
+    var emailVal=fields.email.value.trim();
+    if(emailVal&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)){fields.email.classList.add('error');valid=false}
+    if(!fields.address.value.trim()){fields.address.classList.add('error');valid=false}
+    if(!fields.city.value.trim()){fields.city.classList.add('error');valid=false}
+    var pinVal=fields.pincode.value.trim();
+    if(!pinVal||!/^[0-9]{6}$/.test(pinVal)){fields.pincode.classList.add('error');valid=false}
+    if(!valid){document.getElementById('step3').scrollIntoView({behavior:'smooth',block:'center'})}
+    return valid
+  }
+  if(step===4){
+    var dateInput=document.getElementById('bookingDate');
+    var dateVal=dateInput.value;
+    if(!dateVal){dateInput.classList.add('error');document.getElementById('dateError').style.display='block';document.getElementById('step4').scrollIntoView({behavior:'smooth',block:'center'});return false}
+    dateInput.classList.remove('error');
+    document.getElementById('dateError').style.display='none';
+    var today=new Date();today.setHours(0,0,0,0);
+    var selDate=new Date(dateVal+'T00:00:00');
+    if(selDate<today){dateInput.classList.add('error');document.getElementById('dateError').textContent='Please select a future date.';document.getElementById('dateError').style.display='block';return false}
+    document.getElementById('dateError').textContent='Please select a valid date (must be today or later)';
+    if(!selectedSlot){document.getElementById('slotError').style.display='block';document.getElementById('step4').scrollIntoView({behavior:'smooth',block:'center'});return false}
+    document.getElementById('slotError').style.display='none';
+    return true
+  }
+  return true
+}
+
+function goToStep(step){
+  if(step<1||step>totalSteps)return;
+  currentStep=step;
+  updateStepUI();
+  updateSummary();
+  if(step===2){renderPackages()}
+  if(step===4){updateConfirmSummary()}
+  document.getElementById('step'+step).scrollIntoView({behavior:'smooth',block:'start'})
+}
+
+function submitBooking(){
+  confirmBtn.disabled=true;
+  confirmBtn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Confirming...';
+  var payload={serviceId:selectedService?selectedService.id:'',serviceName:selectedService?selectedService.name:'',packageName:selectedPackage?selectedPackage.name:'',packagePrice:selectedPackage?selectedPackage.price:'',name:document.getElementById('custName').value.trim(),phone:'+91'+document.getElementById('custPhone').value.trim(),email:document.getElementById('custEmail').value.trim(),address:document.getElementById('custAddress').value.trim(),city:document.getElementById('custCity').value.trim(),pincode:document.getElementById('custPincode').value.trim(),date:document.getElementById('bookingDate').value,timeSlot:selectedSlot,instructions:document.getElementById('specialInstructions').value.trim(),total:selectedPackage?selectedPackage.price:''};
+  if(typeof $.ajax!=='undefined'){
+    $.ajax({url:'/api/bookings',method:'POST',contentType:'application/json',data:JSON.stringify(payload),success:function(resp){showSuccess(resp)},error:function(){showSuccessFallback()}})
+  }else{showSuccessFallback()}
+}
+
+function showSuccessFallback(){
+  var id='SUR'+new Date().getFullYear()+'-'+Math.random().toString(36).substr(2,5).toUpperCase();
+  showSuccess({id:id})
+}
+
+function showSuccess(resp){
+  var id=resp&&resp.id?resp.id:'SUR'+new Date().getFullYear()+'-'+Math.random().toString(36).substr(2,5).toUpperCase();
+  bookingId.textContent='#'+id;
+  bookingSuccess.classList.add('show');
+  document.getElementById('stepActions').style.display='none';
+  document.getElementById('summaryCard').style.display='none';
+  bookingSuccess.scrollIntoView({behavior:'smooth',block:'center'})
+}
+
+prevBtn.addEventListener('click',function(){if(currentStep>1){goToStep(currentStep-1)}});
+nextBtn.addEventListener('click',function(){if(validateStep(currentStep)){goToStep(currentStep+1)}});
+confirmBtn.addEventListener('click',function(){if(validateStep(4)){submitBooking()}});
+
+(function(){
+  var dateInput=document.getElementById('bookingDate');
+  var today=new Date();
+  var y=today.getFullYear(),m=String(today.getMonth()+1).padStart(2,'0'),d=String(today.getDate()).padStart(2,'0');
+  dateInput.setAttribute('min',y+'-'+m+'-'+d);
+  dateInput.value=y+'-'+m+'-'+d;
+  dateInput.addEventListener('change',function(){dateInput.classList.remove('error');document.getElementById('dateError').style.display='none';updateSummary();if(currentStep===4)updateConfirmSummary()})
+})();
+
+document.querySelectorAll('.time-slot').forEach(function(slot){
+  slot.addEventListener('click',function(){
+    document.querySelectorAll('.time-slot').forEach(function(s){s.classList.remove('selected')});
+    this.classList.add('selected');
+    selectedSlot=this.getAttribute('data-slot');
+    document.getElementById('slotError').style.display='none';
+    updateSummary();
+    if(currentStep===4)updateConfirmSummary()
+  })
+});
+
+['custName','custPhone','custEmail','custAddress','custCity','custPincode'].forEach(function(id){
+  var el=document.getElementById(id);
+  el.addEventListener('input',function(){this.classList.remove('error');updateSummary()});
+  el.addEventListener('blur',function(){if(currentStep===3&&this.value.trim()){this.classList.remove('error')}})
+});
+
+document.getElementById('specialInstructions').addEventListener('input',updateSummary);
+
+loadServices();
+updateStepUI();
+})();
+</script>
+</body>
+</html>
