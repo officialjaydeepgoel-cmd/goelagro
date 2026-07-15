@@ -27,15 +27,17 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid lg:grid-cols-2 gap-10">
           <div>
-            <div className="bg-white rounded-2xl p-8 flex items-center justify-center h-80 shadow-sm border">
-              <span className="text-8xl opacity-80">
-                {getProductEmoji(product.slug)}
-              </span>
+            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border h-80">
+              <img
+                src={product.images[0] || "/images/placeholder.jpg"}
+                alt={product.name}
+                className="w-full h-full object-cover"
+              />
             </div>
             <div className="flex gap-3 mt-4">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="w-20 h-20 bg-white rounded-xl border flex items-center justify-center text-3xl opacity-60 cursor-pointer hover:opacity-100 transition-opacity">
-                  {getProductEmoji(product.slug)}
+              {(product.images.length > 1 ? product.images : product.images.concat(product.images).concat(product.images)).slice(0, 3).map((img, i) => (
+                <div key={i} className="w-20 h-20 bg-white rounded-xl border overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
+                  <img src={img} alt={`${product.name} ${i + 1}`} className="w-full h-full object-cover" />
                 </div>
               ))}
             </div>
@@ -92,18 +94,4 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
       </div>
     </div>
   );
-}
-
-function getProductEmoji(slug: string): string {
-  const map: Record<string, string> = {
-    wheat: "🌾",
-    rice: "🍚",
-    maize: "🌽",
-    corn: "🌽",
-    pulses: "🫘",
-    spices: "🌶️",
-    "oil-seeds": "🫒",
-    "animal-feed": "🐄",
-  };
-  return map[slug] || "📦";
 }
