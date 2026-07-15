@@ -1,3 +1,8 @@
 backend
 Suraksha Home Care Services
 api
+backend/package.json
+backend/node_modules
+backend/src
+backend/prisma
+backend/tsconfig.json

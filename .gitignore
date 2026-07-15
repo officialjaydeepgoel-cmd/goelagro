@@ -8,5 +8,8 @@ dist/
 *.log
 .DS_Store
 Suraksha Home Care Services/
+backend/node_modules/
+backend/.env
+backend/dist
 
 .vercel
