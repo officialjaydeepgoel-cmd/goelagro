@@ -14,7 +14,7 @@
     "db:seed": "tsx prisma/seed.ts",
     "db:studio": "prisma studio",
     "swagger": "tsx src/swagger.ts",
-    "render:start": "prisma migrate deploy && npx tsx src/index.ts"
+    "render:start": "npx prisma db push && npx tsx src/index.ts"
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",

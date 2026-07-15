@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/api/v1/(.*)", "destination": "https://goelagro-api.onrender.com/api/v1/$1" }
+  ]
+}
