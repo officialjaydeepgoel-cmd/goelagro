@@ -15,17 +15,8 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
-        run: npm install && npx cap init "Goel Agro Global" com.goelagro.trade --web-dir ".next"
-
-      - name: Build Next.js
-        run: npm run build
-
-      - name: Add Android platform
-        run: npx cap add android
-
-      - name: Sync web code
-        run: npx cap sync android
+      - name: Install npm deps
+        run: npm install
 
       - uses: actions/setup-java@v4
         with:
@@ -33,7 +24,7 @@ jobs:
           java-version: 17
 
       - name: Build APK
-        run: cd android && ./gradlew assembleDebug
+        run: cd android && chmod +x gradlew && ./gradlew assembleDebug
 
       - uses: actions/upload-artifact@v4
         with:
