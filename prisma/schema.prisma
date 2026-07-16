@@ -1,0 +1,577 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  CUSTOMER
+  PARTNER
+  ADMIN
+  MODERATOR
+  SUPPORT
+}
+
+enum PartnerStatus {
+  PENDING
+  VERIFIED
+  REJECTED
+  SUSPENDED
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+  REFUNDED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+  REFUNDED
+  PARTIALLY_REFUNDED
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
+
+model User {
+  id              String    @id @default(cuid())
+  email           String?   @unique
+  phone           String?   @unique
+  passwordHash    String?
+  name            String?
+  avatarUrl       String?
+  gender          Gender?
+  dateOfBirth     DateTime?
+  role            UserRole  @default(CUSTOMER)
+  isVerified      Boolean   @default(false)
+  isPhoneVerified Boolean   @default(false)
+  isEmailVerified Boolean   @default(false)
+  googleId        String?   @unique
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  partner            Partner?
+  bookings           Booking[]
+  reviews            Review[]
+  messages           Message[]
+  notifications      Notification[]
+  supportTickets     SupportTicket[]
+  wallet             Wallet?
+  rewardPoints       RewardPoint[]
+  savedPartners      SavedPartner[]
+  referralCode       String?    @unique
+  referredBy         String?
+  referralEarnings   Float      @default(0)
+  deviceSessions     DeviceSession[]
+  emergencyContacts  EmergencyContact[]
+  activityLogs       ActivityLog[]
+  coupons            UserCoupon[]
+  wishlist           WishlistItem[]
+  invoices           Invoice[]
+
+  @@map("users")
+}
+
+model Partner {
+  id                String        @id @default(cuid())
+  userId            String        @unique
+  user              User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  status            PartnerStatus @default(PENDING)
+  businessName      String?
+  description       String?
+  skills            String[]
+  languages         String[]
+  experience        Int           @default(0)
+  hourlyPrice       Float         @default(0)
+  workingRadius     Int           @default(10)
+  isOnline          Boolean       @default(false)
+  isAvailable       Boolean       @default(true)
+  city              String?
+  state             String?
+  country           String?
+  latitude          Float?
+  longitude         Float?
+  averageRating     Float         @default(0)
+  totalReviews      Int           @default(0)
+  totalBookings     Int           @default(0)
+  completionRate    Float         @default(0)
+  responseTime      Int           @default(0)
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  documents         PartnerDocument[]
+  availability      Availability[]
+  bookings          Booking[]       @relation("PartnerBookings")
+  reviews           Review[]        @relation("PartnerReviews")
+  earnings          PartnerEarning[]
+  withdrawRequests  WithdrawRequest[]
+  bankDetails       BankDetails?
+  taxDetails        TaxDetails?
+  certificates      Certificate[]
+  gallery           GalleryImage[]
+
+  @@map("partners")
+}
+
+model PartnerDocument {
+  id        String   @id @default(cuid())
+  partnerId String
+  partner   Partner  @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+  type      String
+  url       String
+  status    String   @default("PENDING")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("partner_documents")
+}
+
+model Certificate {
+  id         String   @id @default(cuid())
+  partnerId  String
+  partner    Partner  @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+  name       String
+  issuer     String
+  issueDate  DateTime?
+  expiryDate DateTime?
+  url        String?
+  createdAt  DateTime @default(now())
+
+  @@map("certificates")
+}
+
+model GalleryImage {
+  id         String   @id @default(cuid())
+  partnerId  String
+  partner    Partner  @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+  url        String
+  caption    String?
+  createdAt  DateTime @default(now())
+
+  @@map("gallery_images")
+}
+
+model Availability {
+  id        String   @id @default(cuid())
+  partnerId String
+  partner   Partner  @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+  dayOfWeek Int
+  startTime String
+  endTime   String
+  isActive  Boolean  @default(true)
+
+  @@map("availability")
+}
+
+model BankDetails {
+  id              String  @id @default(cuid())
+  partnerId       String  @unique
+  partner         Partner @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+  accountNumber   String
+  ifscCode        String
+  bankName        String
+  accountHolder   String
+  upiId           String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@map("bank_details")
+}
+
+model TaxDetails {
+  id        String  @id @default(cuid())
+  partnerId String  @unique
+  partner   Partner @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+  panNumber String?
+  gstNumber String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("tax_details")
+}
+
+model Booking {
+  id            String        @id @default(cuid())
+  customerId    String
+  customer      User          @relation(fields: [customerId], references: [id])
+  partnerId     String
+  partner       Partner       @relation("PartnerBookings", fields: [partnerId], references: [id])
+  serviceType   String
+  bookingDate   DateTime
+  startTime     String
+  endTime       String?
+  duration      Int
+  totalAmount   Float
+  discountAmount Float         @default(0)
+  couponCode    String?
+  finalAmount   Float
+  status        BookingStatus @default(PENDING)
+  address       String?
+  city          String?
+  latitude      Float?
+  longitude     Float?
+  notes         String?
+  cancelledBy   String?
+  cancelReason  String?
+  completedAt   DateTime?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  payment      Payment?
+  review       Review?
+  chatMessages Message[]
+
+  @@map("bookings")
+}
+
+model Payment {
+  id              String        @id @default(cuid())
+  bookingId       String        @unique
+  booking         Booking       @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  razorpayOrderId String?       @unique
+  razorpayPaymentId String?     @unique
+  razorpaySignature String?
+  amount          Float
+  currency        String        @default("INR")
+  status          PaymentStatus @default(PENDING)
+  paymentMethod   String?
+  paidAt          DateTime?
+  refundAmount    Float         @default(0)
+  refundReason    String?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@map("payments")
+}
+
+model Wallet {
+  id        String  @id @default(cuid())
+  userId    String  @unique
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  balance   Float   @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  transactions WalletTransaction[]
+
+  @@map("wallets")
+}
+
+model WalletTransaction {
+  id        String   @id @default(cuid())
+  walletId  String
+  wallet    Wallet   @relation(fields: [walletId], references: [id], onDelete: Cascade)
+  type      String
+  amount    Float
+  balance   Float
+  reference String?
+  metadata  Json?
+  createdAt DateTime @default(now())
+
+  @@map("wallet_transactions")
+}
+
+model PartnerEarning {
+  id        String   @id @default(cuid())
+  partnerId String
+  partner   Partner  @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+  bookingId String?
+  amount    Float
+  commission Float   @default(0)
+  netAmount Float
+  status    String   @default("PENDING")
+  releasedAt DateTime?
+  createdAt DateTime @default(now())
+
+  @@map("partner_earnings")
+}
+
+model WithdrawRequest {
+  id        String   @id @default(cuid())
+  partnerId String
+  partner   Partner  @relation(fields: [partnerId], references: [id], onDelete: Cascade)
+  amount    Float
+  method    String
+  accountNo String?
+  upiId     String?
+  status    String   @default("PENDING")
+  processedAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("withdraw_requests")
+}
+
+model Review {
+  id         String   @id @default(cuid())
+  bookingId  String   @unique
+  booking    Booking  @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  customerId String
+  customer   User     @relation(fields: [customerId], references: [id])
+  partnerId  String
+  partner    Partner  @relation("PartnerReviews", fields: [partnerId], references: [id])
+  rating     Int
+  comment    String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@map("reviews")
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  bookingId String
+  booking   Booking  @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  senderId  String
+  sender    User     @relation(fields: [senderId], references: [id])
+  content   String?
+  mediaUrl  String?
+  mediaType String?
+  isRead    Boolean  @default(false)
+  readAt    DateTime?
+  createdAt DateTime @default(now())
+
+  @@map("messages")
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type      String
+  title     String
+  body      String
+  data      Json?
+  isRead    Boolean  @default(false)
+  readAt    DateTime?
+  createdAt DateTime @default(now())
+
+  @@map("notifications")
+}
+
+model SupportTicket {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  subject    String
+  message    String
+  status     String   @default("OPEN")
+  priority   String   @default("MEDIUM")
+  assignedTo String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  replies SupportTicketReply[]
+
+  @@map("support_tickets")
+}
+
+model SupportTicketReply {
+  id         String   @id @default(cuid())
+  ticketId   String
+  ticket     SupportTicket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  userId     String
+  message    String
+  createdAt  DateTime @default(now())
+
+  @@map("support_ticket_replies")
+}
+
+model Coupon {
+  id           String   @id @default(cuid())
+  code         String   @unique
+  description  String?
+  discountType String
+  discountValue Float
+  minAmount    Float    @default(0)
+  maxDiscount  Float?
+  usageLimit   Int?
+  usedCount    Int      @default(0)
+  startsAt     DateTime?
+  expiresAt    DateTime?
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  users UserCoupon[]
+
+  @@map("coupons")
+}
+
+model UserCoupon {
+  id       String @id @default(cuid())
+  userId   String
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  couponId String
+  coupon   Coupon @relation(fields: [couponId], references: [id], onDelete: Cascade)
+  usedAt   DateTime @default(now())
+
+  @@unique([userId, couponId])
+  @@map("user_coupons")
+}
+
+model Invoice {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  bookingId   String?
+  amount      Float
+  gstAmount   Float    @default(0)
+  totalAmount Float
+  status      String   @default("PAID")
+  pdfUrl      String?
+  createdAt   DateTime @default(now())
+
+  @@map("invoices")
+}
+
+model SavedPartner {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  partnerId String
+  createdAt DateTime @default(now())
+
+  @@unique([userId, partnerId])
+  @@map("saved_partners")
+}
+
+model WishlistItem {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  partnerId String
+  createdAt DateTime @default(now())
+
+  @@unique([userId, partnerId])
+  @@map("wishlist_items")
+}
+
+model RewardPoint {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  points    Int
+  reason    String
+  expiresAt DateTime?
+  createdAt DateTime @default(now())
+
+  @@map("reward_points")
+}
+
+model DeviceSession {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  deviceInfo  String?
+  ipAddress   String?
+  userAgent   String?
+  isActive    Boolean  @default(true)
+  lastActive  DateTime @default(now())
+  createdAt   DateTime @default(now())
+
+  @@map("device_sessions")
+}
+
+model EmergencyContact {
+  id         String @id @default(cuid())
+  userId     String
+  user       User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name       String
+  phone      String
+  relation   String
+  createdAt  DateTime @default(now())
+
+  @@map("emergency_contacts")
+}
+
+model ActivityLog {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  action    String
+  details   Json?
+  ipAddress String?
+  createdAt DateTime @default(now())
+
+  @@map("activity_logs")
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  action    String
+  resource  String
+  resourceId String?
+  details   Json?
+  ipAddress String?
+  userAgent String?
+  createdAt DateTime @default(now())
+
+  @@map("audit_logs")
+}
+
+model City {
+  id        String   @id @default(cuid())
+  name      String
+  state     String?
+  country   String   @default("India")
+  latitude  Float?
+  longitude Float?
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  @@map("cities")
+}
+
+model Category {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  slug        String   @unique
+  description String?
+  icon        String?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  @@map("categories")
+}
+
+model Banner {
+  id        String   @id @default(cuid())
+  title     String
+  subtitle  String?
+  imageUrl  String
+  linkUrl   String?
+  position  Int      @default(0)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("banners")
+}
+
+model Report {
+  id          String   @id @default(cuid())
+  reporterId  String
+  reportedId  String
+  type        String
+  reason      String
+  description String?
+  status      String   @default("PENDING")
+  resolvedAt  DateTime?
+  createdAt   DateTime @default(now())
+
+  @@map("reports")
+}
