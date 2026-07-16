@@ -1,14 +1,14 @@
-version: "3.9"
+version: "3.8"
 
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: goel-agro-postgres
+    container_name: buddyverse-db
     restart: unless-stopped
     environment:
+      POSTGRES_DB: buddyverse
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: goel_agro_global
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-buddyverse_secret}
     ports:
       - "5432:5432"
     volumes:
@@ -21,54 +21,31 @@ services:
 
   redis:
     image: redis:7-alpine
-    container_name: goel-agro-redis
+    container_name: buddyverse-redis
     restart: unless-stopped
     ports:
       - "6379:6379"
     volumes:
       - redis_data:/data
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+    command: redis-server --appendonly yes
 
-  api:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    container_name: goel-agro-api
-    restart: unless-stopped
-    ports:
-      - "4000:4000"
-    environment:
-      NODE_ENV: production
-      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/goel_agro_global?schema=public
-      REDIS_URL: redis://redis:6379
-      JWT_ACCESS_SECRET: ${JWT_ACCESS_SECRET:-super-secret-access-key-change-in-prod}
-      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:-super-secret-refresh-key-change-in-prod}
-      FRONTEND_URL: http://localhost:3000
-    depends_on:
-      postgres:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
-    command: >
-      sh -c "npx prisma migrate deploy && npx prisma db seed && node dist/index.js"
-
-  web:
+  app:
     build:
       context: .
       dockerfile: Dockerfile.web
-    container_name: goel-agro-web
+    container_name: buddyverse-app
     restart: unless-stopped
     ports:
       - "3000:3000"
     environment:
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD:-buddyverse_secret}@postgres:5432/buddyverse
+      REDIS_URL: redis://redis:6379
       NODE_ENV: production
-      NEXT_PUBLIC_API_URL: http://localhost:4000/api/v1
     depends_on:
-      - api
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
 
 volumes:
   postgres_data:
