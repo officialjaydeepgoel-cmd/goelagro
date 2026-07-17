@@ -67,7 +67,7 @@ export default function LoginPage() {
           <div className="mt-6 text-center text-sm text-gray-500">
             <p>Demo credentials:</p>
             <p className="mt-1 font-mono text-xs text-gray-400">
-              Admin: admin@goelagroglobal.com<br/>
+              Admin: admin@buddyverse.ai<br/>
               Seller: rajesh@punjabgrains.com<br/>
               Buyer: ahmed@dubaiimports.com<br/>
               Password: Password@123
