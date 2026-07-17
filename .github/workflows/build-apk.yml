@@ -26,27 +26,20 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Validate SDK
-        run: |
-          echo "ANDROID_HOME=$ANDROID_HOME"
-          echo "Android SDK root: /usr/local/lib/android/sdk"
-          ls -la $ANDROID_HOME/ || echo "SDK not found at ANDROID_HOME"
-          ls -la /usr/local/lib/android/sdk/ 2>/dev/null || echo "SDK not found at default path"
-          which java && java -version
-
       - name: Build APK
         working-directory: android
         run: |
-          SDK_ROOT="${ANDROID_HOME:-/usr/local/lib/android/sdk}"
-          echo "Using SDK at: $SDK_ROOT"
-          export ANDROID_HOME="$SDK_ROOT"
-          export ANDROID_SDK_ROOT="$SDK_ROOT"
           chmod +x gradlew
-          echo "Gradle version:"
-          ./gradlew --version
-          echo "Starting build..."
-          ./gradlew assembleDebug --no-daemon 2>&1
+          export ANDROID_HOME=/usr/local/lib/android/sdk
+          ./gradlew assembleDebug --no-daemon --stacktrace 2>&1 | tee /tmp/gradle.log
         shell: bash
+
+      - name: Upload Gradle log
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gradle-log
+          path: /tmp/gradle.log
 
       - uses: actions/upload-artifact@v4
         with:
