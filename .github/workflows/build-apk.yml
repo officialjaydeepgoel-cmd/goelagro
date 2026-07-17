@@ -26,14 +26,15 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
+      - name: Make gradlew executable
+        working-directory: android
+        run: chmod +x gradlew
 
       - name: Build APK
         working-directory: android
         run: |
           export ANDROID_HOME=/usr/local/lib/android/sdk
-          gradle assembleDebug --no-daemon --stacktrace 2>&1 | tee /tmp/gradle.log
+          ./gradlew assembleDebug --no-daemon --stacktrace 2>&1 | tee /tmp/gradle.log
         shell: bash
 
       - name: Upload Gradle log
