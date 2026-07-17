@@ -60,10 +60,10 @@ export default function RegisterPage() {
       <div className="max-w-lg mx-auto">
         <div className="text-center mb-8">
           <div className="w-14 h-14 bg-primary-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-            <span className="text-white font-bold text-xl">GA</span>
+            <span className="text-white font-bold text-xl">BV</span>
           </div>
           <h1 className="text-2xl font-bold text-gray-900">Create Your Account</h1>
-          <p className="text-gray-500 mt-1">Join Goel Agro Global marketplace</p>
+          <p className="text-gray-500 mt-1">Join BuddyVerse marketplace</p>
         </div>
 
         {success ? (

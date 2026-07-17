@@ -41,10 +41,10 @@ export default function LoginPage() {
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <div className="text-center mb-8">
             <div className="w-14 h-14 bg-primary-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <span className="text-white font-bold text-xl">GA</span>
+              <span className="text-white font-bold text-xl">BV</span>
             </div>
             <h1 className="text-2xl font-bold text-gray-900">Welcome Back</h1>
-            <p className="text-gray-500 text-sm mt-1">Sign in to your Goel Agro Global account</p>
+            <p className="text-gray-500 text-sm mt-1">Sign in to your BuddyVerse account</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">

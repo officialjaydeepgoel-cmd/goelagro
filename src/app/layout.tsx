@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Goel Agro Global - Premium Indian Agricultural Exports",
+  title: "BuddyVerse - Premium Indian Agricultural Exports",
   description: "Connecting Indian Farmers to Global Buyers. Export premium Indian agricultural products including wheat, rice, maize, spices, pulses, and more.",
 };
 

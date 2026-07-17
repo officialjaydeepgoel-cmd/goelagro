@@ -8,15 +8,15 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">GA</span>
+                <span className="text-white font-bold text-lg">BV</span>
               </div>
               <div>
-                <span className="text-xl font-bold text-white">Goel Agro</span>
-                <span className="text-xl font-bold text-primary-400"> Global</span>
+                <span className="text-xl font-bold text-white">Buddy</span>
+                <span className="text-xl font-bold text-primary-400">Verse</span>
               </div>
             </div>
             <p className="text-sm leading-relaxed">
-              Connecting Indian Farmers to Global Buyers. Your trusted partner for premium Indian agricultural exports.
+              Connecting Indian Farmers to Global Buyers. Your trusted partner for premium Indian agricultural exports through BuddyVerse.
             </p>
             <div className="flex gap-3 mt-4">
               {["facebook", "twitter", "linkedin", "instagram"].map((social) => (
@@ -78,7 +78,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <span>✉️</span>
-                <span>info@goelagroglobal.com</span>
+                <span>info@buddyverse.ai</span>
               </li>
               <li className="flex items-center gap-2">
                 <span>🕐</span>
@@ -89,7 +89,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between text-sm">
-          <p>&copy; {new Date().getFullYear()} Goel Agro Global. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} BuddyVerse. All rights reserved.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <a href="#" className="hover:text-primary-400">Privacy Policy</a>
             <a href="#" className="hover:text-primary-400">Terms of Service</a>

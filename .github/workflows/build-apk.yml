@@ -14,9 +14,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
       - name: Install npm deps
-        run: npm install
+        run: npm ci || npm install
 
       - uses: actions/setup-java@v4
         with:
@@ -28,7 +29,10 @@ jobs:
 
       - name: Build APK
         working-directory: android
-        run: chmod +x gradlew && ./gradlew assembleDebug
+        run: |
+          chmod +x gradlew
+          echo "ANDROID_HOME=${ANDROID_HOME:-/usr/local/lib/android/sdk}"
+          ANDROID_HOME="${ANDROID_HOME:-/usr/local/lib/android/sdk}" ./gradlew assembleDebug --no-daemon
 
       - uses: actions/upload-artifact@v4
         with:

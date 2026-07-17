@@ -49,11 +49,11 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link href="/" className="flex items-center gap-2">
             <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center overflow-hidden">
-              {siteLogo ? <img src={siteLogo} alt="Logo" className="w-full h-full object-cover" /> : <span className="text-white font-bold text-lg">GA</span>}
+              {siteLogo ? <img src={siteLogo} alt="Logo" className="w-full h-full object-cover" /> : <span className="text-white font-bold text-lg">BV</span>}
             </div>
             <div className="hidden sm:block">
-              <span className="text-xl font-bold text-gray-900">Goel Agro</span>
-              <span className="text-xl font-bold text-primary-600"> Global</span>
+              <span className="text-xl font-bold text-gray-900">Buddy</span>
+              <span className="text-xl font-bold text-primary-600">Verse</span>
             </div>
           </Link>
 

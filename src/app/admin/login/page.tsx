@@ -37,7 +37,7 @@ export default function AdminLoginPage() {
         <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
           <div className="text-center mb-6">
             <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mx-auto mb-3">
-              <span className="text-white font-bold">GA</span>
+              <span className="text-white font-bold">BV</span>
             </div>
             <h1 className="text-xl font-bold text-white">Admin Login</h1>
             <p className="text-gray-400 text-sm mt-1">Goel Agro Global CMS</p>
