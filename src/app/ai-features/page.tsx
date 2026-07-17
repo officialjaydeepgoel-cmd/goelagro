@@ -71,7 +71,7 @@ export default function AIFeaturesPage() {
               <div className="flex items-center gap-3 mb-4 pb-4 border-b">
                 <div className="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center text-white font-bold">AI</div>
                 <div>
-                  <p className="font-semibold text-sm">Goel Agro AI Assistant</p>
+                  <p className="font-semibold text-sm">BuddyVerse AI Assistant</p>
                   <p className="text-xs text-gray-500">Online</p>
                 </div>
               </div>

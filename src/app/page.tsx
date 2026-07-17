@@ -87,7 +87,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Start Trading?</h2>
           <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-            Join hundreds of global buyers who trust Goel Agro Global for premium Indian agricultural products.
+            Join hundreds of global buyers who trust BuddyVerse for premium Indian agricultural products.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/contact" className="btn-gold text-lg px-8 py-4">

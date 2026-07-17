@@ -46,7 +46,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-900">Email</p>
-                    <p className="text-sm text-gray-500">info@goelagroglobal.com</p>
+                    <p className="text-sm text-gray-500">info@buddyverse.ai</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

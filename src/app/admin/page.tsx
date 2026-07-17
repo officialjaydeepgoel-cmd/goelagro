@@ -44,9 +44,9 @@ export default function AdminPage() {
         <div className="p-4 border-b border-gray-800">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xs">GA</span>
+              <span className="text-white font-bold text-xs">BV</span>
             </div>
-            <span className="font-bold text-sm">Goel Agro Admin</span>
+            <span className="font-bold text-sm">BuddyVerse Admin</span>
           </div>
         </div>
         <nav className="flex-1 p-3 space-y-1">

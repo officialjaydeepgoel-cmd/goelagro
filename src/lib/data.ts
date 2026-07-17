@@ -244,7 +244,7 @@ export const testimonials = [
     name: "Ahmed Al-Rashid",
     company: "Gulf Foods Trading LLC",
     location: "Dubai, UAE",
-    text: "Goel Agro Global has been our trusted partner for Indian rice and spices. Their quality consistency and timely delivery are exceptional.",
+    text: "BuddyVerse has been our trusted partner for Indian rice and spices. Their quality consistency and timely delivery are exceptional.",
     rating: 5,
   },
   {

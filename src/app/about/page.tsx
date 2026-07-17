@@ -15,7 +15,7 @@ export default function AboutPage() {
           <div>
             <h2 className="section-title">Company Profile</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Goel Agro Global is a premier agricultural export company based in New Delhi, India. With over a decade of experience, we have been bridging the gap between Indian farmers and international buyers.
+              BuddyVerse is a premier agricultural export platform based in New Delhi, India. With over a decade of experience, we have been bridging the gap between Indian farmers and international buyers.
             </p>
             <p className="text-gray-600 leading-relaxed mb-4">
               We work directly with farmer producer organizations (FPOs), agricultural cooperatives, and certified processing units to ensure the highest quality products at competitive prices.
