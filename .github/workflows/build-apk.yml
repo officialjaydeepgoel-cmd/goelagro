@@ -26,23 +26,21 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Make gradlew executable
-        working-directory: android
-        run: chmod +x gradlew
-
       - name: Build APK
         working-directory: android
         run: |
-          export ANDROID_HOME=/usr/local/lib/android/sdk
-          ./gradlew assembleDebug --no-daemon --stacktrace 2>&1 | tee /tmp/gradle.log
+          chmod +x gradlew
+          echo "Running ./gradlew assembleDebug..."
+          ./gradlew assembleDebug --no-daemon --stacktrace 2>&1
         shell: bash
+        env:
+          ANDROID_HOME: /usr/local/lib/android/sdk
 
-      - name: Upload Gradle log
-        if: failure()
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: gradle-log
-          path: /tmp/gradle.log
+          name: build-outputs
+          path: android/app/build/outputs/
 
       - uses: actions/upload-artifact@v4
         with:
