@@ -19,9 +19,13 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Install SDK components
+      - name: Debug SDK info
         run: |
-          yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "platforms;android-34" "build-tools;34.0.0" "platforms;android-35" "build-tools;35.0.0" 2>/dev/null || true
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          echo "JAVA_HOME=$JAVA_HOME"
+          ls -la $ANDROID_HOME/ || true
+          ls -la $ANDROID_HOME/platforms/ || true
+          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --list --sdk_root=$ANDROID_HOME 2>/dev/null | head -20 || true
 
       - name: Build APK
         working-directory: android
@@ -30,7 +34,6 @@ jobs:
           ./gradlew assembleDebug --no-daemon --stacktrace
         env:
           ANDROID_HOME: ${{ env.ANDROID_HOME }}
-          JAVA_HOME: ${{ env.JAVA_HOME }}
 
       - uses: actions/upload-artifact@v4
         with:
