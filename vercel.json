@@ -1,5 +1,7 @@
 {
   "rewrites": [
     { "source": "/api/v1/(.*)", "destination": "https://goelagro-api-production.up.railway.app/api/v1/$1" }
-  ]
+  ],
+  "buildCommand": "next build",
+  "framework": "nextjs"
 }
