@@ -14,3 +14,7 @@ backend/dist
 
 .vercel
 .env.vercel
+android/.gradle/
+android/app/build/
+android/build/
+local.properties
