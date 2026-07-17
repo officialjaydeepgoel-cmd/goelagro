@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.goelagro.trade',
-  appName: 'Goel Agro Global',
+  appId: 'com.buddyverse.trade',
+  appName: 'BuddyVerse',
   webDir: 'www'
 };
 

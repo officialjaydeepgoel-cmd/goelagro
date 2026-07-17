@@ -28,12 +28,12 @@ jobs:
 
       - name: Build APK
         working-directory: android
-        run: |
-          ANDROID_HOME=${ANDROID_HOME:-/usr/local/lib/android/sdk}
-          echo "ANDROID_HOME=$ANDROID_HOME"
-          chmod +x gradlew
-          ./gradlew assembleDebug --no-daemon --stacktrace 2>&1 | tail -100
+        run: chmod +x gradlew && ./gradlew assembleDebug --no-daemon
         shell: bash
+        env:
+          ANDROID_HOME: /usr/local/lib/android/sdk
+          ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+          GRADLE_OPTS: -Dorg.gradle.jvmargs=-Xmx4096m -Dorg.gradle.daemon=false
 
       - uses: actions/upload-artifact@v4
         with:

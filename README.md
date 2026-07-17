@@ -1,11 +1,11 @@
-# Goel Agro Global — B2B Agricultural Export Platform
+# BuddyVerse — B2B Agricultural Export Platform
 
 A production-grade B2B platform connecting Indian farmers and suppliers to global buyers. Built with Next.js 14, Express.js, Prisma, and PostgreSQL.
 
 ## Architecture
 
 ```
-goel-agro-global/
+buddyverse/
 ├── src/               # Next.js 14 Frontend (App Router)
 │   ├── app/           # Pages (/, /products, /admin, etc.)
 │   ├── components/    # Shared React components
@@ -44,7 +44,7 @@ goel-agro-global/
 ### 1. Setup Database
 ```bash
 # Create PostgreSQL database
-createdb goel_agro_global
+createdb buddyverse
 
 # Navigate to backend
 cd backend
@@ -84,7 +84,7 @@ docker-compose up -d
 
 | Role         | Email                     | Password      |
 |-------------|---------------------------|---------------|
-| Super Admin | admin@goelagroglobal.com  | Password@123  |
+| Super Admin | admin@buddyverse.ai  | Password@123  |
 | Seller      | rajesh@punjabgrains.com   | Password@123  |
 | Seller      | sunil@keralaspice.com     | Password@123  |
 | Buyer       | ahmed@dubaiimports.com    | Password@123  |

@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: goelagro-api
+    name: buddyverse-api
     env: node
     plan: free
     buildCommand: npm install && npx prisma generate
@@ -13,7 +13,7 @@ services:
         value: 4000
       - key: DATABASE_URL
         fromDatabase:
-          name: goelagro-db
+          name: buddyverse-db
           property: connectionString
       - key: JWT_ACCESS_SECRET
         generateValue: true
@@ -51,7 +51,7 @@ services:
         value: redis://localhost:6379
 
 databases:
-  - name: goelagro-db
+  - name: buddyverse-db
     plan: free
-    databaseName: goelagro
+    databaseName: buddyverse
     ipAllowList: []

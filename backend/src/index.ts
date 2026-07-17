@@ -88,7 +88,7 @@ app.use("/api", limiter);
 app.get("/api/v1/health", (_req, res) => {
   res.json({
     success: true,
-    message: "Goel Agro Global API is running",
+    message: "BuddyVerse API is running",
     timestamp: new Date().toISOString(),
     environment: config.nodeEnv,
   });
@@ -136,7 +136,7 @@ app.use(errorHandler);
 httpServer.listen(config.port, () => {
   console.log(`
 ╔═══════════════════════════════════════════════╗
-║  Goel Agro Global API Server                 ║
+║  BuddyVerse API Server                 ║
 ║  Port: ${config.port}                              ║
 ║  Env:  ${config.nodeEnv.padEnd(33)}║
 ║  URL:  http://localhost:${config.port}                ║

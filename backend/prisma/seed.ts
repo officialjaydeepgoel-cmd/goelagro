@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log("🌱 Seeding Goel Agro Global database...");
+  console.log("🌱 Seeding BuddyVerse database...");
 
   // Clean existing data
   await prisma.leadAssignment.deleteMany();
@@ -45,7 +45,7 @@ async function main() {
   await prisma.user.create({
     data: {
       name: "Super Admin",
-      email: "admin@goelagroglobal.com",
+      email: "admin@buddyverse.ai",
       phone: "+919999999999",
       passwordHash,
       role: "SUPER_ADMIN",
@@ -60,7 +60,7 @@ async function main() {
   const companies = await Promise.all([
     prisma.company.create({
       data: {
-        name: "Goel Agro Global Pvt. Ltd.",
+        name: "BuddyVerse Pvt. Ltd.",
         gstNumber: "07AABCU9603R1Z7",
         iecCode: "0798000123",
         address: "123, Agri Export House, Karol Bagh",
@@ -68,7 +68,7 @@ async function main() {
         state: "Delhi",
         country: "India",
         pincode: "110001",
-        website: "https://goelagroglobal.com",
+        website: "https://buddyverse.ai",
         verifiedBadge: true,
         companyType: "EXPORTER",
         establishedYear: 2014,
@@ -676,7 +676,7 @@ async function main() {
         name: "Ahmed Al-Rashid",
         companyId: companies[4].id,
         designation: "Procurement Director",
-        message: "Goel Agro Global has been our trusted partner for Indian rice and spices for over 3 years. Their quality consistency and timely delivery are exceptional.",
+        message: "BuddyVerse has been our trusted partner for Indian rice and spices for over 3 years. Their quality consistency and timely delivery are exceptional.",
         rating: 5,
         approved: true,
       },
@@ -725,7 +725,7 @@ async function main() {
       slug: "guide-indian-agricultural-exports-hs-codes",
       excerpt: "A comprehensive guide to HS codes, export documentation, and regulations for exporting agricultural products from India.",
       content: "India is one of the world's largest producers of agricultural commodities. From rice and wheat to spices and pulses, Indian agricultural products are in high demand globally. This guide covers everything you need to know about exporting agricultural products from India...",
-      author: "Goel Agro Global Team",
+      author: "BuddyVerse Team",
       tags: JSON.stringify(["Export Guide", "HS Code", "Documentation", "India Export"]),
       published: true,
       publishedAt: new Date(),
@@ -738,7 +738,7 @@ async function main() {
       slug: "top-indian-spices-global-demand-2025",
       excerpt: "Discover which Indian spices are seeing the highest global demand with market trends and pricing.",
       content: "Indian spices have been prized for millennia. As global demand continues to grow, here are the top 10 spices leading the export market...",
-      author: "Goel Agro Global Team",
+      author: "BuddyVerse Team",
       tags: JSON.stringify(["Spices", "Market Trends", "Export", "Indian Spices"]),
       published: true,
       publishedAt: new Date(),
@@ -749,14 +749,14 @@ async function main() {
 
   // ─── SITE SETTINGS ───
   await Promise.all([
-    prisma.siteSetting.create({ data: { key: "site_name", value: JSON.stringify("Goel Agro Global"), group: "general" } }),
+    prisma.siteSetting.create({ data: { key: "site_name", value: JSON.stringify("BuddyVerse"), group: "general" } }),
     prisma.siteSetting.create({ data: { key: "site_tagline", value: JSON.stringify("Connecting Indian Farmers to Global Buyers"), group: "general" } }),
-    prisma.siteSetting.create({ data: { key: "site_email", value: JSON.stringify("info@goelagroglobal.com"), group: "contact" } }),
+    prisma.siteSetting.create({ data: { key: "site_email", value: JSON.stringify("info@buddyverse.ai"), group: "contact" } }),
     prisma.siteSetting.create({ data: { key: "site_phone", value: JSON.stringify("+91 98765 43210"), group: "contact" } }),
     prisma.siteSetting.create({ data: { key: "site_address", value: JSON.stringify("123, Agri Export House, New Delhi - 110001"), group: "contact" } }),
     prisma.siteSetting.create({ data: { key: "whatsapp_number", value: JSON.stringify("+919876543210"), group: "contact" } }),
     prisma.siteSetting.create({ data: { key: "homepage_hero_title", value: JSON.stringify("Export Premium Indian Agricultural Products Worldwide"), group: "content" } }),
-    prisma.siteSetting.create({ data: { key: "meta_description", value: JSON.stringify("Goel Agro Global - Premium Indian Agricultural Exports. B2B platform connecting Indian farmers to global buyers."), group: "seo" } }),
+    prisma.siteSetting.create({ data: { key: "meta_description", value: JSON.stringify("BuddyVerse - Premium Indian Agricultural Exports. B2B platform connecting Indian farmers to global buyers."), group: "seo" } }),
   ]);
 
   console.log("✅ Site settings created");
@@ -839,7 +839,7 @@ async function main() {
   console.log("============================================");
   console.log("\n📋 Login Credentials (all: Password@123):");
   console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-  console.log("👑 admin@goelagroglobal.com   (Super Admin)");
+  console.log("👑 admin@buddyverse.ai   (Super Admin)");
   console.log("👤 rajesh@punjabgrains.com     (Seller)");
   console.log("👤 sunil@keralaspice.com       (Seller)");
   console.log("👤 ahmed@dubaiimports.com      (Buyer)");

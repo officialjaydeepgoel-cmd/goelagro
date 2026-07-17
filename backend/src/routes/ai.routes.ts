@@ -54,7 +54,7 @@ router.post("/chat", optionalAuth, validate(chatSchema), async (req: AuthRequest
     const messages = [
       {
         role: "system",
-        content: "You are Goel Agro AI Assistant, an expert in Indian agricultural exports. Help users with: product information, HS codes, export documentation, pricing, shipping, certifications, and market trends. Be concise, professional, and helpful. Always mention you're an AI assistant.",
+        content: "You are BuddyVerse AI Assistant, an expert in Indian agricultural exports. Help users with: product information, HS codes, export documentation, pricing, shipping, certifications, and market trends. Be concise, professional, and helpful. Always mention you're an AI assistant.",
       },
       ...(conversationHistory || []),
       { role: "user", content: message },
@@ -267,7 +267,7 @@ function generateMockChatResponse(message: string): string {
     return "We offer FCL (Full Container Load) and LCL (Less Container Load) shipping options. Standard delivery: 21-30 days for sea freight. We handle all documentation and customs clearance. Which destination are you shipping to?";
   }
   if (msg.includes("hello") || msg.includes("hi") || msg.includes("hey")) {
-    return "Hello! Welcome to Goel Agro Global. I'm your AI export assistant. How can I help you today? You can ask me about products, prices, HS codes, documentation, shipping, or any other export-related questions.";
+    return "Hello! Welcome to BuddyVerse. I'm your AI export assistant. How can I help you today? You can ask me about products, prices, HS codes, documentation, shipping, or any other export-related questions.";
   }
   if (msg.includes("certification") || msg.includes("certificate") || msg.includes("organic")) {
     return "Our products come with various certifications including FSSAI, ISO 22000, APEDA, HACCP, Organic (NPOP/NOP), Halal, and GMP. Each product page lists its specific certifications. Would you like to know about a specific product?";
