@@ -26,28 +26,19 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Build APK
+      - name: Check env
+        run: |
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          echo "JAVA_HOME=$JAVA_HOME"
+          ls $ANDROID_HOME/platforms/
+        shell: bash
+
+      - name: Gradle build
         working-directory: android
         run: |
           chmod +x gradlew
-          echo "=== ENV ==="
-          echo "ANDROID_HOME=$ANDROID_HOME"
-          echo "JAVA_HOME=$JAVA_HOME"
-          echo "=== SDK ==="
-          ls $ANDROID_HOME/ 2>/dev/null
-          echo "=== PLATFORMS ==="
-          ls $ANDROID_HOME/platforms/ 2>/dev/null || echo "no platforms"
-          echo "=== BUILD ==="
-          ./gradlew assembleDebug --no-daemon --stacktrace 2>&1 | tee /tmp/gradle.log
-          echo "=== DONE ==="
+          ./gradlew assembleDebug --no-daemon --stacktrace
         shell: bash
-
-      - name: Upload Gradle log
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: gradle-log
-          path: /tmp/gradle.log
 
       - uses: actions/upload-artifact@v4
         with:
