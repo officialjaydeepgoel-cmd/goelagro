@@ -30,17 +30,24 @@ jobs:
         working-directory: android
         run: |
           chmod +x gradlew
-          echo "ANDROID_HOME: $ANDROID_HOME"
-          echo "JAVA_HOME: $JAVA_HOME"
-          echo "Running: ./gradlew assembleDebug"
-          ./gradlew assembleDebug --no-daemon --stacktrace
+          echo "=== ENV ==="
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          echo "JAVA_HOME=$JAVA_HOME"
+          echo "=== SDK ==="
+          ls $ANDROID_HOME/ 2>/dev/null
+          echo "=== PLATFORMS ==="
+          ls $ANDROID_HOME/platforms/ 2>/dev/null || echo "no platforms"
+          echo "=== BUILD ==="
+          ./gradlew assembleDebug --no-daemon --stacktrace 2>&1 | tee /tmp/gradle.log
+          echo "=== DONE ==="
         shell: bash
 
-      - name: Check outputs
-        if: always()
-        run: |
-          ls -la android/app/build/outputs/apk/debug/ 2>/dev/null || echo "No APK output found"
-          find android -name "*.apk" 2>/dev/null
+      - name: Upload Gradle log
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gradle-log
+          path: /tmp/gradle.log
 
       - uses: actions/upload-artifact@v4
         with:
