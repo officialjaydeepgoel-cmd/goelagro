@@ -2,8 +2,6 @@ name: Build Android APK
 
 on:
   workflow_dispatch:
-  push:
-    branches: [master]
 
 jobs:
   build:
@@ -26,21 +24,17 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Install Android SDK 34
-        run: |
-          SDK_ROOT=${ANDROID_HOME:-/usr/local/lib/android/sdk}
-          yes | $SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$SDK_ROOT "platforms;android-34" "build-tools;34.0.0" 2>&1
-
       - name: Build APK
         working-directory: android
         run: |
           chmod +x gradlew
-          export ANDROID_HOME=/usr/local/lib/android/sdk
-          echo "JAVA_HOME=$JAVA_HOME"
-          java -version
-          echo "SDK: $ANDROID_HOME"
-          ls $ANDROID_HOME/platforms/
-          ./gradlew assembleDebug --no-daemon --stacktrace
+          echo "ANDROID_HOME from env: $ANDROID_HOME"
+          echo "ANDROID_SDK_ROOT from env: $ANDROID_SDK_ROOT"
+          echo "SDK dir contents:"
+          ls -la $ANDROID_HOME/ 2>/dev/null || echo "No SDK at ANDROID_HOME"
+          ls -la $ANDROID_HOME/platforms/ 2>/dev/null || echo "No platforms dir"
+          ls -la $ANDROID_HOME/build-tools/ 2>/dev/null || echo "No build-tools dir"
+          ./gradlew assembleDebug --no-daemon --stacktrace 2>&1
         shell: bash
 
       - uses: actions/upload-artifact@v4
