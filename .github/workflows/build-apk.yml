@@ -26,24 +26,22 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
+      - name: Install Android SDK 34
+        run: |
+          SDK_ROOT=${ANDROID_HOME:-/usr/local/lib/android/sdk}
+          yes | $SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --sdk_root=$SDK_ROOT "platforms;android-34" "build-tools;34.0.0" 2>&1
+
       - name: Build APK
         working-directory: android
         run: |
-          set -x
           chmod +x gradlew
-          echo "ANDROID_HOME=/usr/local/lib/android/sdk"
-          ls -la /usr/local/lib/android/sdk/ 2>/dev/null && echo "SDK FOUND" || echo "SDK NOT FOUND"
-          ls -la /usr/local/lib/android/sdk/platforms/ 2>/dev/null || echo "No platforms dir"
-          ./gradlew assembleDebug --no-daemon --stacktrace 2>&1
+          export ANDROID_HOME=/usr/local/lib/android/sdk
+          echo "JAVA_HOME=$JAVA_HOME"
+          java -version
+          echo "SDK: $ANDROID_HOME"
+          ls $ANDROID_HOME/platforms/
+          ./gradlew assembleDebug --no-daemon --stacktrace
         shell: bash
-        env:
-          ANDROID_HOME: /usr/local/lib/android/sdk
-
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: build-outputs
-          path: android/app/build/outputs/
 
       - uses: actions/upload-artifact@v4
         with:
